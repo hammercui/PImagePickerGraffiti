@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="graffiti_colorPrimary">#FF6E40</color>
+    <color name="graffiti_colorPrimaryDark">#CC5833</color>
+    <color name="graffiti_colorAccent">#FF6E40</color>
+
+    <color name="graffiti_btn_pressed_color">#dfffd943</color>
+    <color name="graffiti_btn_text">#000000</color>
+    <color name="rectangle_green">#568700</color>
+    <color name="rectangle_orange">#ffa500</color>
+    <color name="rectangle_white">#ffffff</color>
+</resources>
