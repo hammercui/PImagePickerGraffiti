@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:fitsSystemWindows="true">
+
+    <!-- 头部 -->
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:layout_alignParentTop="true"
+        android:padding="8dp"
+        >
+        <TextView
+            android:id="@+id/tv_flashLight"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:text="灯"/>
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:text="取消"/>
+    </RelativeLayout>
+
+    <!--相机取景界面 -->
+    <RelativeLayout
+        android:id="@+id/cameraLayout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="visible"
+        android:layout_centerInParent="true">
+        <com.paicheya.pimagepicker.camera.CameraPreview
+                android:id="@+id/cameraPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        <com.paicheya.pimagepicker.camera.FocusView
+                android:id="@+id/viewFocus"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                />
+        <com.paicheya.pimagepicker.camera.ReferenceLine
+                android:id="@+id/referenceLine"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:text="建议横屏拍摄"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout_guide"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:id="@+id/image_guide"
+                android:layout_width="60dp"
+                android:layout_height="45dp"
+                android:background="@drawable/img_default"
+                />
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="15dp"
+                android:background="#aaffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:text="照片标题"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/image_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_default"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    </ImageView>
+
+    <!-- 底部菜单-->
+    <FrameLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:layout_alignParentBottom="true"
+        android:padding="12dp">
+
+        <include
+            android:id="@+id/layout_result"
+            layout="@layout/pip_view_bottom_photoresult"/>
+        <include
+            layout="@layout/pip_view_bottom_photo"/>
+    </FrameLayout>
+
+
+
+</RelativeLayout>

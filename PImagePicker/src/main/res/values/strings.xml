@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PImagePicker</string>
+    <string name="pai_permission_title_rationale">Permission needed</string>
+    <string name="pai_permission_read_storage_rationale">Storage read permission is needed to pick files.</string>
+    <string name="pai_permission_camer">Cammer permission is needed</string>
+    <string name="pai_permission_write_storage_rationale">Storage write permission is needed to save the image.</string>
+    <string name="pai_label_cancel">Cancel</string>
+    <string name="pai_label_ok">OK</string>
+</resources>
