@@ -1,7 +1,7 @@
 <resources>
 
     <!--uCrop Activity-->
-    <dimen name="ucrop_padding_crop_frame">70dp</dimen>
+    <dimen name="ucrop_padding_crop_frame">0dp</dimen>
     <dimen name="ucrop_size_dot_scale_text_view">8dp</dimen>
     <dimen name="ucrop_height_horizontal_wheel_progress_line">20dp</dimen>
     <dimen name="ucrop_width_horizontal_wheel_progress_line">2dp</dimen>

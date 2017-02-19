@@ -11,4 +11,17 @@
         android:layout_height="wrap_content"
         android:text="测试照相机"/>
 
+    <Button
+        android:id="@+id/btn_test_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试相册"/>
+
+    <ImageView
+        android:id="@+id/image_test"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        />
+
+
 </LinearLayout>

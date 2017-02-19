@@ -36,7 +36,7 @@
                 android:layout_centerVertical="true"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
-                android:src="@drawable/ucrop_btn_back"
+                android:src="@drawable/btn_back"
                 />
 
 

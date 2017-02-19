@@ -5,6 +5,7 @@ import android.app.Application;
 import com.elvishew.xlog.LogConfiguration;
 import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.XLog;
+import com.squareup.leakcanary.LeakCanary;
 
 /**
  * Created by cly on 17/2/8.
@@ -14,7 +15,15 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
+
         initApp();
+
     }
 
     private void initApp(){

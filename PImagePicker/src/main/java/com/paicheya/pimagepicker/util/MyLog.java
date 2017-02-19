@@ -25,7 +25,8 @@ public class MyLog {
 
     public static void log(String msg){
         //Logger.i(TAG+MYTAG+"||  "+msg);
-        Logger.i(MYTAG+"|| "+msg);
+       // Logger.i(MYTAG+"|| "+msg);
+        Log.i(MYTAG,msg);
     }
 
 

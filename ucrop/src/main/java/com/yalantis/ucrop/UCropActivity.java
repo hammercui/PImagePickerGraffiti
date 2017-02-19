@@ -733,7 +733,6 @@ public class UCropActivity extends AppCompatActivity {
         supportInvalidateOptionsMenu();
 
         mGestureCropImageView.cropAndSaveImage(mCompressFormat, mCompressQuality, new BitmapCropCallback() {
-
             @Override
             public void onBitmapCropped(@NonNull Uri resultUri, int imageWidth, int imageHeight) {
                 lockProgressDialog.dismiss();

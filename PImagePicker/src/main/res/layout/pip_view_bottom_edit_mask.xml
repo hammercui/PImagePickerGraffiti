@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:flexWrap="nowrap"
+    app:flexDirection="row"
+    app:alignItems="center"
+    app:justifyContent="space_between">
+
+    <TextView
+        android:id="@+id/tv_maskCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:text="取消"/>
+
+
+    <TextView
+        android:id="@+id/tv_maskBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:text="回退"/>
+
+    <TextView
+        android:id="@+id/tv_maskForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:text="前进"/>
+
+    <Button
+        android:id="@+id/btn_maskOk"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textSize="22sp"
+        android:background="#ffffff"
+        android:text="完成"/>
+
+</com.google.android.flexbox.FlexboxLayout>

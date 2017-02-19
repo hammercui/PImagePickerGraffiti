@@ -7,14 +7,23 @@
 
 >图片选择、编辑库，包含自定义相机，照片处理
 
-### 注意事项
+### relase note:
++ 2017-02-19:
+ - 完美解决里的自定义camera在竖屏应用，三星等部分手机拍照之后bitmap自动旋转的问题。
+ - 发现内存溢出问题，是持有了外部的匿名内部类，也会持有匿名内部类的外部类。解决方式：不再使用单例模式+callback的回调方式，使用onResultActivity方式。
+
+### 1. 注意事项
 #### 1.三星机型旋转角度问题
+
 
 在三星部分机型，发现camera捕捉bitmap后，会对bitmap进行旋转处理，其他机型没有这个问题。
 
-为了解决这个问题，考虑获得拍照后图片的旋转角度，但是Android不像ios，可以直接拍照后获得ExifInterface信息，Android必须在保存后才能获得ExifInterface。因此我们分为散步：
+以下解决方式验证不成功：
 
-1. 压缩存储图片
+~~为了解决这个问题，考虑获得拍照后图片的旋转角度，但是Android不像ios，可以直接拍照后获得ExifInterface信息，Android必须在保存后才能获得ExifInterface。因此我们分为三步:~~
+
+
+~~1. 压缩存储图片
 2.  `ExifInterface exifInterface = new ExifInterface(path)`获得 `ExifInterfac`类,`    int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  `获得旋转角度。
 3. 修正旋转角度，具体如何旋转，需要在三星的设备上测试
 ```
@@ -24,11 +33,13 @@ exifInterface.saveAttributes();
 // TODO Auto-generated catch block
 e.printStackTrace();
 }  
-```
+```~~
+
+**新的解决方式，已经完美解决了，如下**
 
 
 
-### 目标功能
+### 2. 目标功能
 * 图片获得
  - 相册
  - 相机
@@ -38,7 +49,7 @@ e.printStackTrace();
   - 图标，新建一个图标view,可旋转，可取消
 
 
-### 设计实现 
+### 3. 设计实现 
 #### PImagePickerConfig类
 >配置类，配置图片的各项属性，通过构建者模式实现
 如：
@@ -52,13 +63,12 @@ e.printStackTrace();
 #### PImagePicker类
 >图片选择功能类，目前使用单例模式
 
-* `init()`:初始化PImagePickerConfig属性
-* `getDefault()`:获得单例
-* `getCOnfig()`:获得配置类
+* `creat()`:初始化PImagePickerConfig属性
 * `pickFromCamera()`:从相机获得图片，拍照后可直接存储返回，或者进入编辑页
 * `pickFromCaleary()`:从相册获得图片，目前单选模式
 * `transEditImage(Uri uri)`:进入图片编辑页
 * `transCropImage(Uri uri)`:进入图片裁切页
+* 
 
 #### ImageResultCallback接口
 >图片结果回调类，有`onSuccess()`,`onFail()`方法 

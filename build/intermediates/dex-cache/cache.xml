@@ -3,12 +3,111 @@
 
     <item
         is-multidex="true"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5/3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f/leakcanary-analyzer-1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.5_521551e3e250bc11f26bb3f0d2dbaf91c9209234/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_7572cdce8557e1f1b07eb403382abc0263d5dbf2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_edf96d6fde34d9cd5602f6fe14f5b924becfe9d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_f59113a2deb808110b35413fc7241fcd896ab36d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.orhanobut/logger/1.15/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2a156b99fc7cc034308f942906b09d32754a4470">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.orhanobut-logger-1.15_77349ad9885532112f7775941d711e8272db14ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.squareup.leakcanary-leakcanary-android-1.5_dc077f3b9785a57a0d1b4507161a9f510ead432c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/origin_graffiti/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c10c5a91e6a19a3514cdf731ef961541c31105ef">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/intermediates-exploded-aar-origin_graffiti_db63fdf9ce3d7cf3d262211ab4b27ff47cb4b9d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_9ea30bf7014df297fbc9eea8303a824f3f2a1c7c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_c5e9a38376d0e1e0f4c3a83f6d41df3d9d35a77d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_dfb0cdbe877c26a097c719822463e7bb389b5d67/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_2de76ab5e5ef62f9b87bb0f44cd02a6f8af248f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_317819eb4c64c2e5c8b5ec9fce4010cc1496d4d6/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,51 +156,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_edf96d6fde34d9cd5602f6fe14f5b924becfe9d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_f59113a2deb808110b35413fc7241fcd896ab36d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.orhanobut/logger/1.15/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2a156b99fc7cc034308f942906b09d32754a4470">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.orhanobut-logger-1.15_77349ad9885532112f7775941d711e8272db14ef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/origin_graffiti/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c10c5a91e6a19a3514cdf731ef961541c31105ef">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/intermediates-exploded-aar-origin_graffiti_db63fdf9ce3d7cf3d262211ab4b27ff47cb4b9d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_9ea30bf7014df297fbc9eea8303a824f3f2a1c7c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
@@ -120,12 +174,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/2.0.3/640a438d2d415c056ca6a673ac26b183b044e160/haha-2.0.3.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_c5e9a38376d0e1e0f4c3a83f6d41df3d9d35a77d/classes.dex" />
+        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-2.0.3_a32dc15eef2039ade71167098eacd1939de73bab/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -138,12 +192,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.5/288101b16513158c2923ad3fb6161d1452b65e73/leakcanary-watcher-1.5.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_dfb0cdbe877c26a097c719822463e7bb389b5d67/classes.dex" />
+        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.5_c38961de29e2ae86b86b180c79985afa73626042/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -165,30 +219,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_2de76ab5e5ef62f9b87bb0f44cd02a6f8af248f6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="365565664d88d787594327e6053b5c0881bbb3fa">
+        sha1="22a15eda189129e5ff8973ab5fefefa3bc0ecbd4">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b83a4a4521ac4ac4070a5253f31a91bc220ba71e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_317819eb4c64c2e5c8b5ec9fce4010cc1496d4d6/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -196,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="8cfd5905f4fd7f986c7c4a69405de04d82b1a35d">
+        sha1="26b4515c235463bfd9b8546b6f4eaf9832d7aef9">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
     </item>
     <item

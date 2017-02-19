@@ -1,0 +1,17 @@
+//配置文件
+
+ext {
+    android = [
+            compileSdkVersion:23,
+            buildToolsVersion:"23.0.1",
+            minSdkVersion:15,
+            targetSdkVersion:23
+    ]
+
+    dependencies = [
+            appcompatv7:'com.android.support:appcompat-v7:23.3.0',
+            junit:'junit:junit:4.12',
+            xlog:'com.elvishew:xlog:1.3.0',
+            flexbox:'com.google.android:flexbox:0.2.5'
+    ]
+}

@@ -6,4 +6,5 @@
     <string name="pai_permission_write_storage_rationale">Storage write permission is needed to save the image.</string>
     <string name="pai_label_cancel">Cancel</string>
     <string name="pai_label_ok">OK</string>
+    <string name="pai_label_select_picture">Select Picture</string>
 </resources>

@@ -32,10 +32,10 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:23.3.0'
     testCompile 'junit:junit:4.12'
-    compile project(':ucrop')
     //log管理工具
     compile 'com.orhanobut:logger:1.15'
     //第三方涂鸦库的aar
     compile(name: 'origin_graffiti', ext: 'aar')
     //compile project(':AndroidsLib-release')
+    compile project(':ucrop')
 }

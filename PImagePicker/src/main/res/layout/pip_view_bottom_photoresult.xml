@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
         android:textSize="22sp"
+        android:visibility="invisible"
         android:text="编辑"/>
 
     <TextView
