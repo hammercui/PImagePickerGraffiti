@@ -23,9 +23,9 @@
 ~~为了解决这个问题，考虑获得拍照后图片的旋转角度，但是Android不像ios，可以直接拍照后获得ExifInterface信息，Android必须在保存后才能获得ExifInterface。因此我们分为三步:~~
 
 
-~~1. 压缩存储图片
-2.  `ExifInterface exifInterface = new ExifInterface(path)`获得 `ExifInterfac`类,`    int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  `获得旋转角度。
-3. 修正旋转角度，具体如何旋转，需要在三星的设备上测试
+~~1. 压缩存储图片~~
+~~2.  `ExifInterface exifInterface = new ExifInterface(path)`获得 `ExifInterfac`类,`    int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  `获得旋转角度。~~
+~~3. 修正旋转角度，具体如何旋转，需要在三星的设备上测试
 ```
 exifInterface.setAttribute(ExifInterface.TAG_ORIENTATION, "no");
 exifInterface.saveAttributes();
