@@ -25,15 +25,14 @@
 
 ~~1. 压缩存储图片~~
 ~~2.  `ExifInterface exifInterface = new ExifInterface(path)`获得 `ExifInterfac`类,`    int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  `获得旋转角度。~~
-~~3. 修正旋转角度，具体如何旋转，需要在三星的设备上测试
-```
+~~3. 修正旋转角度，具体如何旋转，需要在三星的设备上测试`
 exifInterface.setAttribute(ExifInterface.TAG_ORIENTATION, "no");
 exifInterface.saveAttributes();
 } catch (IOException e) {
 // TODO Auto-generated catch block
 e.printStackTrace();
 }  
-```~~
+`~~
 
 
 **新的解决方式，已经完美解决了，如下**
