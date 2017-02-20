@@ -15,7 +15,7 @@ import com.paicheya.pimagepicker.PImagePicker;
 import com.paicheya.pimagepicker.PImagePickerConfig;
 import com.paicheya.pimagepicker.util.ScreenUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private ImageView imageView;
     @Override
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 .setImageName(System.currentTimeMillis()+".jpg")
                 .setPressQuality(50)
                 .setFromCamera(true)
+                .setAspectRatio(4,3)
+                .setDirPath("/padDemo")
                 .builder();
         PImagePicker.create(pImagePickerConfig).startCameraActivity(this);
     }

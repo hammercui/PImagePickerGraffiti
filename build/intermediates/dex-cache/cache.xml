@@ -223,7 +223,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="22a15eda189129e5ff8973ab5fefefa3bc0ecbd4">
+        sha1="63f92f94c325cc6b1fcb7f89da3747397125500f">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b83a4a4521ac4ac4070a5253f31a91bc220ba71e/classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="26b4515c235463bfd9b8546b6f4eaf9832d7aef9">
+        sha1="aa2128d57fa602ec7e51a3f8c9940c4692a82ec7">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
     </item>
     <item

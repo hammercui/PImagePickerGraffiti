@@ -37,6 +37,75 @@ e.printStackTrace();
 
 **新的解决方式，已经完美解决了，如下**
 
+首先在竖屏应用设置camera旋转90度
+
+```
+if (Build.VERSION.SDK_INT >= 8) {
+	Method downPolymorphic;
+		try {
+			downPolymorphic = camera.getClass().getMethod("setDisplayOrientation",
+					new Class[]{int.class});
+			if (downPolymorphic != null) {
+				downPolymorphic.invoke(camera, new Object[]{90});
+			}
+		} catch (Exception e) {
+			Log.e("Came_e", "图像出错");
+		}
+} else {
+		parameters.setRotation(90);
+}
+```
+
+camer获得data转换成bitmap时，进行bitmap的旋转
+
+```
+ public static Bitmap byteToBitmap(byte[] data ){
+        Bitmap croppedImage;
+        //获得图片大小
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(data, 0, data.length, options);
+        MyLog.log("预处理option的width:"+options.outWidth+",height"+options.outHeight);
+        int width = options.outWidth;
+        int height = options.outHeight;
+        options.inJustDecodeBounds = false;
+        Rect r = new Rect(0, 0, width, height);
+        try {
+            croppedImage = decodeRegionCrop(data, r,width,height);
+        } catch (Exception e) {
+            return null;
+        }
+        return croppedImage;
+    }
+
+    private static Bitmap decodeRegionCrop(byte[] data, Rect rect,int width,int height) {
+        InputStream is = null;
+        System.gc();
+        Bitmap croppedImage = null;
+        try {
+            is = new ByteArrayInputStream(data);
+            BitmapRegionDecoder decoder = BitmapRegionDecoder.newInstance(is, false);
+            try {
+                croppedImage = decoder.decodeRegion(rect, new BitmapFactory.Options());
+            } catch (IllegalArgumentException e) {
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        } finally {
+            IOUtil.closeStream(is);
+        }
+        Matrix m = new Matrix();
+        m.setRotate(90, width / 2, height / 2);
+        Bitmap rotatedImage = Bitmap.createBitmap(croppedImage, 0, 0, width, height, m, true);
+        if (rotatedImage != croppedImage)
+            croppedImage.recycle();
+        return rotatedImage;
+    }
+
+```
+
+
+
 
 
 ### 2. 目标功能
@@ -54,24 +123,19 @@ e.printStackTrace();
 >配置类，配置图片的各项属性，通过构建者模式实现
 如：
 
-1. 图片压缩比例
-2. 图片宽高比，如4：3，16：9
-3. 结果回调接口
-4. 图片名称
-5. 图片保存路径
+1. `setPressQuality(int )`图片压缩比例 0~100
+2. `setAspectRatio(4,3)`图片宽高比，如4：3，16：9
+4. `setImageName(System.currentTimeMillis()+".jpg")`图片名称
+5. `setDirPath(String)`图片保存相对路径
+6. `setFromCamera(Boolean)`相机情况，相机一定要把获得的图片放到其他地址，而不是app包路径
 
 #### PImagePicker类
->图片选择功能类，目前使用单例模式
+>图片选择功能类，功能入口
 
-* `creat()`:初始化PImagePickerConfig属性
-* `pickFromCamera()`:从相机获得图片，拍照后可直接存储返回，或者进入编辑页
-* `pickFromCaleary()`:从相册获得图片，目前单选模式
-* `transEditImage(Uri uri)`:进入图片编辑页
-* `transCropImage(Uri uri)`:进入图片裁切页
-* 
+* `creat(PImagePickerConfig)`:初始化PImagePickerConfig属性
+* `startCameraActivity(Activity)`:从相机获得图片，拍照后可直接存储返回，或者进入编辑页
+* `startGalleryActivity(Activity)`:从相册获得图片，目前单选模式
 
-#### ImageResultCallback接口
->图片结果回调类，有`onSuccess()`,`onFail()`方法 
 
 #### BitemapUtil工具类
 >提供操作Bitemap的工具，比如按比例裁切，旋转等，

@@ -67,7 +67,7 @@ public class PImagePicker extends PermissionUtil {
     /**
      * 从相机中获得图片
      */
-    public   void startCameraActivity(@NonNull Activity activity ){
+    public  void startCameraActivity(@NonNull Activity activity ){
         if (!checkPermissionReadSDkard(activity))
             return;
         if (!checkPermissionCamera(activity))
