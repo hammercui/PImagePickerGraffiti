@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 //apply from: '../mavenpush.gradle'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.2'
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 24
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 22
         versionName "2.2.0-native"
 
@@ -37,6 +37,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    //
+    compile rootProject.ext.dependencies.appcompatv7
+    //
+    compile rootProject.ext.dependencies.okhttp
+
 }

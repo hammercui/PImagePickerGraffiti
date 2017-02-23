@@ -13,25 +13,18 @@ import java.io.File;
  */
 
 public class PImagePickerConfig {
-    //private ImgPickerCallback imageCallback;
     private int pressQuality;
-    //private String dirPath;
     private String imageName;
     private String imagePath;
     private float  aspectRatio;
     private boolean cameraRoll;
     private boolean fromCamera;
-//    public ImgPickerCallback getImageCallback() {
-//        return imageCallback;
-//    }
+    private int maxFiles;
+    private boolean multiple;
 
     public int getPressQuality() {
         return pressQuality;
     }
-
-//    public String getDirPath() {
-//        return dirPath;
-//    }
 
     public String getImageName() {
         return imageName;
@@ -49,6 +42,21 @@ public class PImagePickerConfig {
         return cameraRoll;
     }
 
+    public int getMaxFiles() {
+        return maxFiles;
+    }
+
+    public void setMaxFiles(int maxFiles) {
+        this.maxFiles = maxFiles;
+    }
+
+    public boolean isMultiple() {
+        return multiple;
+    }
+
+    public void setMultiple(boolean multiple) {
+        this.multiple = multiple;
+    }
 
     public PImagePickerConfig(Builder builder){
         this.pressQuality = builder.pressQuality;
@@ -58,7 +66,8 @@ public class PImagePickerConfig {
         String path  ;
         //生成图片路径
         if(fromCamera && cameraRoll){
-            path = Environment.getExternalStorageDirectory().getPath()+"/"+builder.dirPath;
+            //path = Environment.getExternalStorageDirectory().getPath()+"/"+builder.dirPath;
+            path = Environment.getExternalStorageDirectory().getPath()+"/DCIM/Camera";
         }
         else{
             path = builder.packageDirPath+"/"+builder.dirPath;
@@ -69,14 +78,14 @@ public class PImagePickerConfig {
         }
         this.imagePath = path +"/"+builder.imageName;
         this.aspectRatio = builder.aspectRatio;
+        this.multiple = builder.multiple;
+        this.maxFiles = builder.maxFiles;
+
     }
 
 
     public static class Builder{
-        /**
-         * 图片回调
-         */
-        //private ImgPickerCallback imageCallback;
+
 
         /**
          * 压缩比0~100
@@ -106,6 +115,9 @@ public class PImagePickerConfig {
 
         private String  packageDirPath ;
 
+        private int maxFiles = 5;
+        private boolean multiple = false;
+
         /**
          * 设置压缩比,默认70，从0~100
          * @param quality
@@ -125,11 +137,6 @@ public class PImagePickerConfig {
             return this;
         }
 
-//        public Builder setResultCallback(ImgPickerCallback callback){
-//            this.imageCallback = callback;
-//            return this;
-//        }
-
         public Builder setCameraRoll(Boolean cameraRoll){
             this.cameraRoll = cameraRoll;
             return this;
@@ -140,6 +147,14 @@ public class PImagePickerConfig {
             return this;
         }
 
+        public Builder setMultiple(Boolean multiple){
+            this.multiple = multiple;
+            return this;
+        }
+        public Builder setMaxFiles(int maxFiles){
+            this.maxFiles = maxFiles;
+            return this;
+        }
         /**
          * 设置高宽比 高/款 3：4
          * @return

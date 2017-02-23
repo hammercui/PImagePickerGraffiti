@@ -4,7 +4,7 @@ ext {
     android = [
             compileSdkVersion:23,
             buildToolsVersion:"23.0.1",
-            minSdkVersion:15,
+            minSdkVersion:16,
             targetSdkVersion:23
     ]
 
@@ -12,6 +12,10 @@ ext {
             appcompatv7:'com.android.support:appcompat-v7:23.3.0',
             junit:'junit:junit:4.12',
             xlog:'com.elvishew:xlog:1.3.0',
-            flexbox:'com.google.android:flexbox:0.2.5'
+            logger:'com.orhanobut:logger:1.15',
+            flexbox:'com.google.android:flexbox:0.2.5',
+            leakcanary:'com.squareup.leakcanary:leakcanary-android:1.5',
+            okhttp:'com.squareup.okhttp3:okhttp:3.4.1',
+            urcop:'com.yalantis:ucrop:2.2.0-native'
     ]
 }

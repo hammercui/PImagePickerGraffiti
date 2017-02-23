@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -26,11 +26,15 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.android.support:appcompat-v7:23.0.1"
-
+    //
+    compile rootProject.ext.dependencies.appcompatv7
+    //
+    compile rootProject.ext.dependencies.junit
     //log管理工具
-    compile 'com.orhanobut:logger:1.15'
+    compile rootProject.ext.dependencies.logger
     //google官方弹性布局
-    compile 'com.google.android:flexbox:0.2.5'
+    compile rootProject.ext.dependencies.flexbox
+    //ucrop
+    //compile rootProject.ext.dependencies.urcop
     compile project(':ucrop')
 }

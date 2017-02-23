@@ -41,7 +41,7 @@ public  class CameraDealTask extends AsyncTask<byte[],Integer,Bitmap> {
     @Override
     protected Bitmap doInBackground(byte[]... params) {
         // 相机获得图像
-        MyLog.log("拍照获得图片大小："+(float)params[0].length/1024f+"kb");
+        MyLog.log("拍照获得图片大小："+params[0].length+"b");
         Bitmap bitmap = BitmapUtil.byteToBitmap(params[0]);
         //Bitmap bitmap = BitmapFactory.decodeByteArray(params[0], 0, params[0].length);
 //        int width = bitmap.getWidth();
@@ -60,6 +60,7 @@ public  class CameraDealTask extends AsyncTask<byte[],Integer,Bitmap> {
         }
 
         MyLog.log("处理后图片分辨率：width_"+bitmap.getWidth()+"  height_"+bitmap.getHeight());
+
         return bitmap;
     }
 

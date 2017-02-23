@@ -18,21 +18,24 @@ public class MyLog {
     public static void log(String TAG,String msg){
         //Logger.i(TAG+MYTAG+"||  "+msg);
         //Logger.i(MYTAG+"|| "+msg);
-        Log.i(TAG,msg);
+        Log.d(TAG,msg);
     }
-
-
 
     public static void log(String msg){
         //Logger.i(TAG+MYTAG+"||  "+msg);
        // Logger.i(MYTAG+"|| "+msg);
-        Log.i(MYTAG,msg);
+        Log.d(MYTAG,msg);
     }
-
 
     public static void log(Object... args){
         //Logger.i(TAG+MYTAG,args);
-        Logger.i(MYTAG,args);
+        Logger.d(MYTAG,args);
+    }
+    public static void D(String msg){
+        Log.d(MYTAG,msg);
+    }
+    public static void D(Object... msg){
+        Logger.d(MYTAG,msg);
     }
 
 }

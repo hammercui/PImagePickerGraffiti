@@ -18,9 +18,9 @@ allprojects {
         jcenter()
 
         //引用mygraffitipicture工程libs目录下的aar文件
-        flatDir {
-            dir project(':mygraffitipicture').file('libs')
-        }
+//        flatDir {
+//            dir project(':mygraffitipicture').file('libs')
+//        }
     }
 }
 

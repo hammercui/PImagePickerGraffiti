@@ -22,6 +22,4 @@ public class ActionsManager {
         intent.putExtra(EditActivity.SOURCE_PATH,sourceUri);
         context.startActivity(intent);
     }
-
-
 }

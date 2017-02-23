@@ -3,8 +3,10 @@ package com.paicheya.pimagepicker.view.gallery;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -19,9 +21,13 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.FrameLayout;
 
 
 import com.paicheya.pimagepicker.R;
+import com.paicheya.pimagepicker.core.OutputUri;
+import com.paicheya.pimagepicker.util.BitmapUtil;
+import com.paicheya.pimagepicker.util.MyLog;
 import com.paicheya.pimagepicker.util.ScreenUtils;
 import com.paicheya.pimagepicker.core.PImagePickerBaseActivity;
 import com.yalantis.ucrop.callback.BitmapCropCallback;
@@ -61,7 +67,6 @@ public class GalleryActivity extends PImagePickerBaseActivity {
 
     }
 
-    private static final String TAG = "UCropActivity";
 
     private static final int TABS_COUNT = 3;
 
@@ -94,7 +99,7 @@ public class GalleryActivity extends PImagePickerBaseActivity {
 
     private Uri galleryUri; //输入的uri
     private Uri outputUri ; //输出uri
-    private boolean initSuccess = false;
+    private boolean initSuccess = false; //初始化成功
 
     //选择图片请求
     private static final int REQUEST_SELECT_PICTURE = 0x01;
@@ -126,6 +131,12 @@ public class GalleryActivity extends PImagePickerBaseActivity {
      * 初始化菜单视图
      */
     private void initBottomView(){
+        findViewById(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         //重试按钮
         findViewById(R.id.tv_retry).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +153,12 @@ public class GalleryActivity extends PImagePickerBaseActivity {
                 cropAndSaveImage();
             }
         });
+        findViewById(R.id.tv_resetRotate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetRotation();
+            }
+        });
     }
 
     /**
@@ -152,7 +169,6 @@ public class GalleryActivity extends PImagePickerBaseActivity {
         mGestureCropImageView = mUCropView.getCropImageView();
         mOverlayView = mUCropView.getOverlayView();
         mGestureCropImageView.setTransformImageListener(mImageListener);
-
         processOptions();
     }
 
@@ -165,16 +181,25 @@ public class GalleryActivity extends PImagePickerBaseActivity {
         int maxSizeY =  maxSizeX;
         mGestureCropImageView.setMaxResultImageSizeX(maxSizeX);
         mGestureCropImageView.setMaxResultImageSizeY(maxSizeY);
-        //配置遮罩助兴
+        this.resetRotation();
+        //配置遮罩
         //显示矩形裁切框
         mOverlayView.setShowCropFrame(true);
-        //设置裁切框的宽度
+        //设置裁切框属性
+        mOverlayView.setCropFrameStrokeWidth(10);
+        mOverlayView.setCropFrameColor(Color.RED);
         mOverlayView.setCropGridStrokeWidth(5);
         mOverlayView.setCropGridColor(Color.WHITE);//横竖线的颜色
         mOverlayView.setCropGridColumnCount(2);//竖线数量
         mOverlayView.setCropGridRowCount(2);//竖线数量
-
     }
+
+    //重置旋转角度
+    private void resetRotation() {
+        mGestureCropImageView.postRotate(-mGestureCropImageView.getCurrentAngle());
+        mGestureCropImageView.setImageToWrapCropBounds();
+    }
+
 
     private void openGallery(){
         // 方法1 直接跳转图库选择页
@@ -186,15 +211,23 @@ public class GalleryActivity extends PImagePickerBaseActivity {
 //                REQUEST_SELECT_PICTURE);
 
         //方法2
-        Intent libraryIntent;
-        libraryIntent = new Intent(Intent.ACTION_PICK,
-                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        if (libraryIntent.resolveActivity(this.getPackageManager()) == null) {
+        //final Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        final Intent galleryIntent = new Intent();
+        galleryIntent.setType("image/*");
+        MyLog.D("configMultiple:"+configMultiple);
+        galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, configMultiple);
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+        galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
+        galleryIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+        final Intent chooserIntent = Intent.createChooser(galleryIntent, "Pick an image");
+        if (chooserIntent.resolveActivity(this.getPackageManager()) == null) {
             setResultError("Cannot launch photo library");
             return;
         }
+
+        //方法3
         try {
-            this.startActivityForResult(libraryIntent, REQUEST_SELECT_PICTURE);
+            this.startActivityForResult(chooserIntent, REQUEST_SELECT_PICTURE);
         } catch (ActivityNotFoundException e) {
             e.printStackTrace();
             setResultError("Cannot launch photo library");
@@ -213,24 +246,67 @@ public class GalleryActivity extends PImagePickerBaseActivity {
             switch (requestCode) {
                 //从图库选择图片成功
                 case REQUEST_SELECT_PICTURE:
-                    final Uri selectedUri = data.getData();
-                    if (selectedUri != null) {
-                        galleryUri = selectedUri;
-                        //已初始化成功
-                        if(initSuccess){
-                            setImageData();
-                        }else{
-                            initView();
+                    //多选模式
+                    if(configMultiple){
+                        ClipData clipData = data.getClipData();
+                        try{
+                            if (clipData == null) {
+                                singleFromGallery(data.getData());
+                            }
+                            else{
+                                multipleFromGallery(clipData);
+                            }
+                        }catch (Exception ex){
+                            ex.printStackTrace();
+                            setResultError(ex.toString());
                         }
-                    } else {
-                        setResultError("发生未知错误，选取图片失败");
+                    }
+                    else{
+                        data.getData();
+                        singleFromGallery(data.getData());
                     }
                     break;
             }
         }
         else {
+            setResultError("取消选择图片");
+        }
+    }
+
+
+    private void singleFromGallery(Uri selectedUri){
+        if (selectedUri != null) {
+            galleryUri = selectedUri;
+            //已初始化成功
+            if(initSuccess){
+                setImageData();
+            }else{
+                initView();
+            }
+        } else {
             setResultError("发生未知错误，选取图片失败");
         }
+    }
+
+    private void multipleFromGallery(ClipData clipData){
+        ArrayList<OutputUri> list = new ArrayList<OutputUri>();
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+
+        for (int i = 0 ,len = clipData.getItemCount(); i <len; i++) {
+            Uri uri = clipData.getItemAt(i).getUri();
+            String path = BitmapUtil.getRealFilePath(this,uri);
+            BitmapFactory.decodeFile(path, options);
+            int width = options.outWidth;
+            int height = options.outHeight;
+            int size = (int) new File(path).length();
+
+
+            OutputUri outputUri = new OutputUri(uri,path,width,height,size);
+            list.add(outputUri);
+        }
+        options = null;
+        setResultUris(list);
     }
 
 
@@ -341,8 +417,10 @@ public class GalleryActivity extends PImagePickerBaseActivity {
             public void onBitmapCropped(@NonNull Uri resultUri, int imageWidth, int imageHeight) {
                 lockProgressDialog.dismiss();
                 Log.i("裁切完成","裁切后uri："+resultUri);
-                Log.i("裁切完成","裁切后大小imageWidth："+imageWidth+",imageHeight:"+imageHeight);
-                setResultUri(resultUri,imageWidth,imageWidth);
+                String path = resultUri.getPath();
+                int size = (int)new File(path).length();
+                Log.i("裁切完成","裁切后大小imageWidth："+imageWidth+",imageHeight:"+imageHeight+",size:"+size);
+                setResultUri(new OutputUri(resultUri,path,imageWidth,imageHeight,size));
             }
 
             @Override
@@ -352,6 +430,12 @@ public class GalleryActivity extends PImagePickerBaseActivity {
                 setResultError(t.toString());
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUCropView = null;
 
     }
 }

@@ -331,7 +331,7 @@ public class CropStartActivity extends BaseActivity {
          * @param result
          */
     private void handleCropResult(@NonNull Intent result) {
-        MyLog.log(TAG,"裁剪后图片宽—高："+UCrop.getOutputImageWidth(result)+"/"+UCrop.getOutputImageHeight(result));
+       // MyLog.log(TAG,"裁剪后图片宽—高："+UCrop.getOutputImageWidth(result)+"/"+UCrop.getOutputImageHeight(result));
         final Uri resultUri = UCrop.getOutput(result);
         if (resultUri != null) {
             //GraffitiStartActivity.startWithUri(CropStartActivity.this, resultUri);

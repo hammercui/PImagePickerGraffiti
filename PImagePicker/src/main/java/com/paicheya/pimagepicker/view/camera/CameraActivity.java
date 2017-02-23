@@ -23,6 +23,7 @@ import com.google.android.flexbox.FlexboxLayout;
 import com.paicheya.pimagepicker.ActionsManager;
 import com.paicheya.pimagepicker.R;
 import com.paicheya.pimagepicker.callback.CameraDealCallback;
+import com.paicheya.pimagepicker.core.OutputUri;
 import com.paicheya.pimagepicker.core.PImagePickerBaseActivity;
 import com.paicheya.pimagepicker.callback.CameraDealTask;
 import com.paicheya.pimagepicker.util.BitmapUtil;
@@ -278,13 +279,14 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
             return;
         }
         Uri uri = Uri.fromFile(new File(configOutPutPath));
-        int width = bitmap.getWidth();
+        int width  = bitmap.getWidth();
         int height = bitmap.getHeight();
-
         //图片保存成功
         if(BitmapUtil.saveBitmapFile(bitmap,configOutPutPath, configPressQuality)){
-            insertGallery(uri);
-            setResultUri(uri,width,height);
+            //insertGallery(uri);
+            long size   =  new File(configOutPutPath).length();
+            MyLog.log("处理后图片大小:"+size);
+            setResultUri(new OutputUri(uri,configOutPutPath,width,height,(int)size));
         }
         else{
             setResultError("图片保存失败！");

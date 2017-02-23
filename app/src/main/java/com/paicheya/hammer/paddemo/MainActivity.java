@@ -13,7 +13,10 @@ import android.widget.LinearLayout;
 
 import com.paicheya.pimagepicker.PImagePicker;
 import com.paicheya.pimagepicker.PImagePickerConfig;
+import com.paicheya.pimagepicker.core.OutputUri;
 import com.paicheya.pimagepicker.util.ScreenUtils;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity  {
         imageView = (ImageView)this.findViewById(R.id.image_test);
     }
 
+
     private void testCamera(){
         PImagePickerConfig pImagePickerConfig = new PImagePickerConfig.Builder(this)
                 .setImageName(System.currentTimeMillis()+".jpg")
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity  {
                 .setFromCamera(true)
                 .setAspectRatio(4,3)
                 .setDirPath("/padDemo")
+                .setCameraRoll(true)
                 .builder();
         PImagePicker.create(pImagePickerConfig).startCameraActivity(this);
     }
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity  {
                 .setDirPath("/img")
                 .setImageName(System.currentTimeMillis()+".jpg")
                 .setPressQuality(50)
+                .setMultiple(false)
+                .setMaxFiles(10)
                 .builder();
         PImagePicker.create(pImagePickerConfig).startGalleryActivity(this);
     }
@@ -76,18 +83,21 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 //成功获得图片
-                case PImagePicker.REQUEST_PICKER_IMAGE:
-                    Uri uri = PImagePicker.getOutput(data);
-                    if (uri != null) {
-                        showImageView(uri);
+                case PImagePicker.REQUEST_PICKER_IMAGE_SINGLE:
+                    OutputUri  outputUri = PImagePicker.getOutput(data);
+                    if (outputUri != null) {
+                        showImageView(outputUri.getUri());
                     } else {
                         Log.i("错误：","发生未知错误，选取图片失败");
                     }
+                    break;
+                case PImagePicker.REQUEST_PICKER_IMAGE_MULTIPLE:
+                    ArrayList<OutputUri> list = PImagePicker.getOutputArray(data);
                     break;
             }
         }

@@ -11,6 +11,19 @@
 + 2017-02-19:
  - 完美解决里的自定义camera在竖屏应用，三星等部分手机拍照之后bitmap自动旋转的问题。
  - 发现内存溢出问题，是持有了外部的匿名内部类，也会持有匿名内部类的外部类。解决方式：不再使用单例模式+callback的回调方式，使用onResultActivity方式。
++ 2017-02-23:
+ - 从图库选择，新增多选功能，使用系统自带的多选模式。
+ 
+ ```
+   Intent galleryIntent = new Intent();
+   galleryIntent.setType("image/*");
+   galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+   galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+   galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
+   galleryIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+    final Intent chooserIntent = Intent.createChooser(galleryIntent, "Pick an image");
+   this.startActivityForResult(chooserIntent, REQUEST_SELECT_PICTURE)
+ ```
 
 ### 1. 注意事项
 #### 1.三星机型旋转角度问题
@@ -138,12 +151,13 @@ camer获得data转换成bitmap时，进行bitmap的旋转
 
 
 #### BitemapUtil工具类
->提供操作Bitemap的工具，比如按比例裁切，旋转等，
+>提供操作Bitemap的工具，比如按比例裁切，旋转，byte转bitmap,uri获得realpath等，
 
 
 ## 引入的第三方库
 
-裁切库ucrop(但是已经被我该的它亲妈都不认得了)
+裁切库ucrop(以源码的形式引入，便于定制化修改),目前使用版本
+`compile 'com.yalantis:ucrop:2.2.0' `
 
 
 ##  工程目录

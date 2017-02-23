@@ -10,4 +10,6 @@
     <color name="rectangle_orange">#ffa500</color>
     <color name="rectangle_white">#ffffff</color>
     <color name="pip_warn">#DC143C</color>
+    <color name="pip_black">#000000</color>
+    <color name="pip_image_background">#666666</color>
 </resources>

@@ -48,6 +48,10 @@
            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
            android:screenOrientation="landscape">
        </activity>
+        <activity android:name="com.paicheya.hammer.graffitipicture.UCropMyselfActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="landscape">
+        </activity>
 
         <activity android:name="com.paicheya.hammer.graffitipicture.mycamera.MyCameraActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
