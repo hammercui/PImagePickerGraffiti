@@ -12,4 +12,5 @@
     <color name="pip_warn">#DC143C</color>
     <color name="pip_black">#000000</color>
     <color name="pip_image_background">#666666</color>
+    <color name="pip_theme_body">#cc22292c</color>
 </resources>

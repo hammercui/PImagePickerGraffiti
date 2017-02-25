@@ -1,0 +1,64 @@
+<RelativeLayout
+    android:id="@+id/content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/footer_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pip_top_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="#DC22292C">
+        <Button
+            android:id="@+id/btn_dir"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:drawablePadding="4dp"
+            android:drawableRight="@drawable/text_indicator"
+            android:ellipsize="end"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:singleLine="true"
+            android:text="全部图片"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:text="取消"/>
+    </RelativeLayout>
+
+
+    <GridView
+        android:id="@+id/gridview"
+        android:background="@color/graffiti_colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:horizontalSpacing="2dp"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:padding="2dp"
+        android:layout_marginTop="@dimen/pip_top_bar_height"
+        android:layout_marginBottom="@dimen/pip_bottom_bar_height"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp"/>
+
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/pip_view_bottom_gallery_multiple"/>
+</RelativeLayout>

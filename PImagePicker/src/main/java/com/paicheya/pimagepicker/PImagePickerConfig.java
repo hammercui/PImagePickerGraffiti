@@ -2,6 +2,8 @@ package com.paicheya.pimagepicker;
 
 import android.content.Context;
 import android.os.Environment;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.paicheya.pimagepicker.util.MathUtil;
 import com.paicheya.pimagepicker.util.MyLog;
@@ -12,7 +14,7 @@ import java.io.File;
  * Created by cly on 17/2/8.
  */
 
-public class PImagePickerConfig {
+public class PImagePickerConfig implements Parcelable {
     private int pressQuality;
     private String imageName;
     private String imagePath;
@@ -46,16 +48,8 @@ public class PImagePickerConfig {
         return maxFiles;
     }
 
-    public void setMaxFiles(int maxFiles) {
-        this.maxFiles = maxFiles;
-    }
-
     public boolean isMultiple() {
         return multiple;
-    }
-
-    public void setMultiple(boolean multiple) {
-        this.multiple = multiple;
     }
 
     public PImagePickerConfig(Builder builder){
@@ -80,13 +74,12 @@ public class PImagePickerConfig {
         this.aspectRatio = builder.aspectRatio;
         this.multiple = builder.multiple;
         this.maxFiles = builder.maxFiles;
-
     }
 
 
+
+
     public static class Builder{
-
-
         /**
          * 压缩比0~100
          */
@@ -182,4 +175,44 @@ public class PImagePickerConfig {
             return new PImagePickerConfig(this);
         }
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.pressQuality);
+        dest.writeString(this.imageName);
+        dest.writeString(this.imagePath);
+        dest.writeFloat(this.aspectRatio);
+        dest.writeByte(this.cameraRoll ? (byte) 1 : (byte) 0);
+        dest.writeByte(this.fromCamera ? (byte) 1 : (byte) 0);
+        dest.writeInt(this.maxFiles);
+        dest.writeByte(this.multiple ? (byte) 1 : (byte) 0);
+    }
+
+    protected PImagePickerConfig(Parcel in) {
+        this.pressQuality = in.readInt();
+        this.imageName = in.readString();
+        this.imagePath = in.readString();
+        this.aspectRatio = in.readFloat();
+        this.cameraRoll = in.readByte() != 0;
+        this.fromCamera = in.readByte() != 0;
+        this.maxFiles = in.readInt();
+        this.multiple = in.readByte() != 0;
+    }
+
+    public static final Creator<PImagePickerConfig> CREATOR = new Creator<PImagePickerConfig>() {
+        @Override
+        public PImagePickerConfig createFromParcel(Parcel source) {
+            return new PImagePickerConfig(source);
+        }
+
+        @Override
+        public PImagePickerConfig[] newArray(int size) {
+            return new PImagePickerConfig[size];
+        }
+    };
 }

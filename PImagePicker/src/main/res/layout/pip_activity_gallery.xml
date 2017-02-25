@@ -35,7 +35,7 @@
     <!--</FrameLayout>-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/pip_top_height"
+        android:layout_height="@dimen/pip_top_bar_height"
         android:layout_alignParentTop="true"
         android:background="@color/pip_black"
         >
@@ -54,7 +54,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/pip_bottom_height"
+        android:layout_height="@dimen/pip_bottom_bar_height"
         android:background="@color/pip_black"
         android:layout_alignParentBottom="true"
         android:padding="10dp"

@@ -1,4 +1,4 @@
-package com.paicheya.pimagepicker.callback;
+package com.paicheya.pimagepicker.view.camera;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -6,9 +6,9 @@ import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.os.AsyncTask;
 
+import com.paicheya.pimagepicker.listener.CameraDealCallback;
 import com.paicheya.pimagepicker.util.BitmapUtil;
 import com.paicheya.pimagepicker.util.MyLog;
-import com.paicheya.pimagepicker.view.camera.CameraActivity;
 
 import java.io.IOException;
 

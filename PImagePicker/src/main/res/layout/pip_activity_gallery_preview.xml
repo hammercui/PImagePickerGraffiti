@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <com.paicheya.pimagepicker.view.gallery.ViewPagerFixed
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- top bar-->
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:background="#cc22292c"
+        android:layout_height="@dimen/pip_top_bar_height"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_back_press"
+            android:padding="14dp"
+            android:src="@drawable/pip_ic_back"/>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/btn_back"
+            android:background="#cc111111"/>
+
+        <TextView
+            android:id="@+id/tv_xiangce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/btn_back"
+            android:text="相册"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="10/31"
+            />
+        <com.paicheya.pimagepicker.view.gallery.SuperCheckBox
+            android:id="@+id/cb_check"
+            style="@style/SuperCheckboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:drawablePadding="4dp"
+            android:includeFontPadding="true"
+            android:paddingLeft="8dp"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+    <!-- bottom bar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pip_top_bar_height"
+        android:id="@+id/bottom_bar"
+        android:background="#cc22292c"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/selector_top_ok"
+            android:minHeight="30dp"
+            android:minWidth="50dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="完成(3/9)"
+            android:textColor="#ffffff"
+            android:textSize="14dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

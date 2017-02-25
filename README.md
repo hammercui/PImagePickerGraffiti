@@ -5,7 +5,11 @@
 
 ## Module:PImagePicker
 
+## 感谢：
+本module的多图选择模块，大部分使用了[廖子尧](https://github.com/jeasonlzy)的[ImagePicker](https://github.com/jeasonlzy/ImagePicker)组件库，十分感谢！
+
 >图片选择、编辑库，包含自定义相机，照片处理
+
 
 ### relase note:
 + 2017-02-19:
@@ -13,7 +17,7 @@
  - 发现内存溢出问题，是持有了外部的匿名内部类，也会持有匿名内部类的外部类。解决方式：不再使用单例模式+callback的回调方式，使用onResultActivity方式。
 + 2017-02-23:
  - 从图库选择，新增多选功能，使用系统自带的多选模式。
- 
+   
  ```
    Intent galleryIntent = new Intent();
    galleryIntent.setType("image/*");
@@ -24,6 +28,10 @@
     final Intent chooserIntent = Intent.createChooser(galleryIntent, "Pick an image");
    this.startActivityForResult(chooserIntent, REQUEST_SELECT_PICTURE)
  ```
++ 2017-02-26：
+ - 修改[廖子尧](https://github.com/jeasonlzy)的[ImagePicker](https://github.com/jeasonlzy/ImagePicker)库，并嵌入功能
+ - 完成多图选择，并测试内存占用，完美！暂时未发现内存泄漏问题，待更新
+ - 考虑到activity的独占性，修改单例模式，使用继承模式，每个activity自己维护数据。
 
 ### 1. 注意事项
 #### 1.三星机型旋转角度问题
@@ -123,9 +131,9 @@ camer获得data转换成bitmap时，进行bitmap的旋转
 
 ### 2. 目标功能
 * 图片获得
- - 相册
- - 相机
-* 图片裁切（可选）
+ - 相册，单选（支持裁切），多选（暂时不支持裁切）
+ - 相机，单拍（支持裁切）
+* 图片裁切（可选），开发中
 * 图片涂鸦
   - 马赛克（有回退，有清屏）
   - 图标，新建一个图标view,可旋转，可取消

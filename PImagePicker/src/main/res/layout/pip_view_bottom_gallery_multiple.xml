@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/pip_top_bar_height"
+    android:layout_alignParentBottom="true"
+    android:background="#cc22292c"
+    android:clickable="true">
+
+
+    <Button
+        android:id="@+id/btn_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="预览(3)"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/selector_top_ok"
+        android:minHeight="30dp"
+        android:minWidth="50dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="完成(3/9)"
+        android:textColor="#ffffff"
+        android:textSize="14dp"/>
+
+</RelativeLayout>

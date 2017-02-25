@@ -1,5 +1,6 @@
 package com.paicheya.pimagepicker.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -155,4 +156,22 @@ public class ScreenUtils {
         return (int) (pxValue / scale + 0.5f);
     }
 
+    /** 根据屏幕宽度与密度计算GridView显示的列数， 最少为三列，并获取Item宽度 */
+    public static int getImageItemWidth(Activity activity) {
+        int screenWidth = activity.getResources().getDisplayMetrics().widthPixels;
+        int densityDpi = activity.getResources().getDisplayMetrics().densityDpi;
+        int cols = screenWidth / densityDpi;
+        cols = cols < 3 ? 3 : cols;
+        int columnSpace = (int) (2 * activity.getResources().getDisplayMetrics().density);
+        return (screenWidth - columnSpace * (cols - 1)) / cols;
+    }
+
+    /**
+     * 获取手机大小（分辨率）
+     */
+    public static DisplayMetrics getScreenPix(Activity activity) {
+        DisplayMetrics displaysMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displaysMetrics);
+        return displaysMetrics;
+    }
 }

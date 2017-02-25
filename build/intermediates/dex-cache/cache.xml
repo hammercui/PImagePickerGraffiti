@@ -111,6 +111,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/androidPadDemo/PImagePicker/unspecified/jars/libs/universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4e2ec9a1a288c4a652f0611e2c2c31ab0f9df8fb">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/universal-image-loader-1.9.5_d4ccf0ea714765dca978da26368684811a8aac80/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -144,6 +153,15 @@
         revision="23.0.1"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_5226f6ad953f7470c394ea5067a76a663a104ad7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/androidPadDemo/PImagePicker/unspecified/jars/libs/photoView.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="160b1cfca255269f2329532085d620a037dde4fa">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/photoView_69313b2c003b2f410c9c32306d417d03d4df7713/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -223,8 +241,17 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="01a6fdaebeea5c704e82e9c473cf4ff330af5b21">
+        sha1="ed2bff1cc80fe6e8292ee06cca00c51107de6b76">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b83a4a4521ac4ac4070a5253f31a91bc220ba71e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="91f6bcfe1a505a5b95ff5f06a4ddc4c0cadd7861">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -234,15 +261,6 @@
         revision="23.0.1"
         sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_317819eb4c64c2e5c8b5ec9fce4010cc1496d4d6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d0429d293ac0df4315e67e459a2078d32e607f34">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
     </item>
     <item
         is-multidex="true"

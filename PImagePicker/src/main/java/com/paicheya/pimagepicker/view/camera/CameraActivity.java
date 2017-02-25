@@ -22,10 +22,9 @@ import android.widget.TextView;
 import com.google.android.flexbox.FlexboxLayout;
 import com.paicheya.pimagepicker.ActionsManager;
 import com.paicheya.pimagepicker.R;
-import com.paicheya.pimagepicker.callback.CameraDealCallback;
-import com.paicheya.pimagepicker.core.OutputUri;
-import com.paicheya.pimagepicker.core.PImagePickerBaseActivity;
-import com.paicheya.pimagepicker.callback.CameraDealTask;
+import com.paicheya.pimagepicker.bean.ImageItem;
+import com.paicheya.pimagepicker.listener.CameraDealCallback;
+import com.paicheya.pimagepicker.core.BaseActivity;
 import com.paicheya.pimagepicker.util.BitmapUtil;
 import com.paicheya.pimagepicker.util.MyLog;
 import com.paicheya.pimagepicker.util.ScreenRotateUtil;
@@ -40,7 +39,7 @@ import java.io.FileNotFoundException;
  * Created by cly on 16/11/24.
  */
 
-public class CameraActivity extends PImagePickerBaseActivity implements CameraPreview.OnCameraStatusListener,ScreenRotateUtil.ScreenRotateListener {
+public class CameraActivity extends BaseActivity implements CameraPreview.OnCameraStatusListener,ScreenRotateUtil.ScreenRotateListener {
 
     private CameraPreview cameraPreview;//相机视图
     private ImageView imagePreview;//预览视图
@@ -124,9 +123,9 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
     private void initView(Context context){
 
         cameraWidth   = ScreenUtils.getScreenWH(context).widthPixels;
-        cameraHeight  = (int)(cameraWidth * configAspectRatio);
+        cameraHeight  = (int)(cameraWidth * pImagePickerConfig.getAspectRatio());
         previewWidth  = cameraWidth;
-        previewHeight = (int)(previewWidth / configAspectRatio);
+        previewHeight = (int)(previewWidth / pImagePickerConfig.getAspectRatio());
         this.initSensor();
         this.initTopView();
         this.initCameraView();
@@ -180,13 +179,13 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
         cameraPreview = (CameraPreview)this.findViewById(R.id.cameraPreview);
         cameraPreview.setFocusView(focusView);
         cameraPreview.setOnCameraStatusListener(this);
-        cameraPreview.setAspectRatio(configAspectRatio);
+        cameraPreview.setAspectRatio(pImagePickerConfig.getAspectRatio());
         //提示框
         referenceLine = (ReferenceLine)this.findViewById(R.id.referenceLine);
         RelativeLayout.LayoutParams referenceParams = new RelativeLayout.LayoutParams(previewWidth,previewHeight);
         referenceParams.addRule(RelativeLayout.CENTER_IN_PARENT);
         referenceLine.setLayoutParams(referenceParams);
-        referenceLine.setAspectRatio(configAspectRatio);
+        referenceLine.setAspectRatio(pImagePickerConfig.getAspectRatio());
         //提示文字
         tvTips = (TextView)this.findViewById(R.id.tv_tips);
 
@@ -259,9 +258,9 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
             setResultError("拍照图片失败，未知错误");
             return;
         }
-        Uri uri = Uri.fromFile(new File(configOutPutPath));
+        Uri uri = Uri.fromFile(new File(pImagePickerConfig.getImagePath()));
         //图片保存 并跳转编辑页
-        if(BitmapUtil.saveBitmapFile(bitmap,configOutPutPath, configPressQuality)){
+        if(BitmapUtil.saveBitmapFile(bitmap,pImagePickerConfig.getImagePath(), pImagePickerConfig.getPressQuality())){
             insertGallery(uri);
             ActionsManager.transEditActivity(this,uri);
         }
@@ -278,15 +277,15 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
             setResultError("拍照图片失败，未知错误");
             return;
         }
-        Uri uri = Uri.fromFile(new File(configOutPutPath));
+        Uri uri = Uri.fromFile(new File(pImagePickerConfig.getImagePath()));
         int width  = bitmap.getWidth();
         int height = bitmap.getHeight();
         //图片保存成功
-        if(BitmapUtil.saveBitmapFile(bitmap,configOutPutPath, configPressQuality)){
+        if(BitmapUtil.saveBitmapFile(bitmap,pImagePickerConfig.getImagePath(), pImagePickerConfig.getPressQuality())){
             //insertGallery(uri);
-            long size   =  new File(configOutPutPath).length();
+            long size   =  new File(pImagePickerConfig.getImagePath()).length();
             MyLog.log("处理后图片大小:"+size);
-            setResultUri(new OutputUri(uri,configOutPutPath,width,height,(int)size));
+            setResultUri(new ImageItem(pImagePickerConfig.getImagePath(),width,height,size));
         }
         else{
             setResultError("图片保存失败！");
@@ -296,14 +295,14 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
 
     //图片插入到系统图库
     private void insertGallery(Uri uri){
-        if(!configCameraRoll)
+        if(!pImagePickerConfig.isCameraRoll())
             return;
         // 其次把文件插入到系统图库
         try {
             MediaStore.Images.Media.insertImage(
                     this.getContentResolver(),
-                    configOutPutPath,
-                    configImageName,
+                    pImagePickerConfig.getImagePath(),
+                    pImagePickerConfig.getImageName(),
                     null);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -330,8 +329,8 @@ public class CameraActivity extends PImagePickerBaseActivity implements CameraPr
                 bitmap = params;
                 showPreviewLayout();
             }
-        },currDirect,configAspectRatio);
-        cameraDealTask.setOutPutPath(configOutPutPath);
+        },currDirect,pImagePickerConfig.getAspectRatio());
+        cameraDealTask.setOutPutPath(pImagePickerConfig.getImagePath());
         cameraDealTask.execute(data);
     }
 

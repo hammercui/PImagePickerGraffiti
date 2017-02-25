@@ -1,4 +1,4 @@
-package com.paicheya.pimagepicker.core;
+package com.paicheya.pimagepicker.bean;
 
 import android.net.Uri;
 import android.os.Parcel;

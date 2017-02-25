@@ -11,7 +11,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -21,15 +20,14 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
-import android.widget.FrameLayout;
 
 
 import com.paicheya.pimagepicker.R;
-import com.paicheya.pimagepicker.core.OutputUri;
+import com.paicheya.pimagepicker.bean.ImageItem;
 import com.paicheya.pimagepicker.util.BitmapUtil;
 import com.paicheya.pimagepicker.util.MyLog;
 import com.paicheya.pimagepicker.util.ScreenUtils;
-import com.paicheya.pimagepicker.core.PImagePickerBaseActivity;
+import com.paicheya.pimagepicker.core.BaseActivity;
 import com.yalantis.ucrop.callback.BitmapCropCallback;
 import com.yalantis.ucrop.view.GestureCropImageView;
 import com.yalantis.ucrop.view.OverlayView;
@@ -47,7 +45,7 @@ import java.util.List;
  */
 
 @SuppressWarnings("ConstantConditions")
-public class GalleryActivity extends PImagePickerBaseActivity {
+public class GalleryActivity extends BaseActivity {
 
     public static final int DEFAULT_COMPRESS_QUALITY = 90;
     public static final Bitmap.CompressFormat DEFAULT_COMPRESS_FORMAT = Bitmap.CompressFormat.JPEG;
@@ -107,7 +105,7 @@ public class GalleryActivity extends PImagePickerBaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        outputUri = Uri.fromFile(new File(configOutPutPath));
+        outputUri = Uri.fromFile(new File(pImagePickerConfig.getImagePath()));
         openGallery();
     }
 
@@ -214,8 +212,8 @@ public class GalleryActivity extends PImagePickerBaseActivity {
         //final Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         final Intent galleryIntent = new Intent();
         galleryIntent.setType("image/*");
-        MyLog.D("configMultiple:"+configMultiple);
-        galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, configMultiple);
+        MyLog.D("configMultiple:"+pImagePickerConfig.isMultiple());
+        galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, pImagePickerConfig.isMultiple());
         galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
         galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
         galleryIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
@@ -247,7 +245,7 @@ public class GalleryActivity extends PImagePickerBaseActivity {
                 //从图库选择图片成功
                 case REQUEST_SELECT_PICTURE:
                     //多选模式
-                    if(configMultiple){
+                    if(pImagePickerConfig.isMultiple()){
                         ClipData clipData = data.getClipData();
                         try{
                             if (clipData == null) {
@@ -289,24 +287,23 @@ public class GalleryActivity extends PImagePickerBaseActivity {
     }
 
     private void multipleFromGallery(ClipData clipData){
-        ArrayList<OutputUri> list = new ArrayList<OutputUri>();
+        //ArrayList<ImageItem> list = new ArrayList<OutputUri>();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
 
-        for (int i = 0 ,len = clipData.getItemCount(); i <len; i++) {
-            Uri uri = clipData.getItemAt(i).getUri();
-            String path = BitmapUtil.getRealFilePath(this,uri);
-            BitmapFactory.decodeFile(path, options);
-            int width = options.outWidth;
-            int height = options.outHeight;
-            int size = (int) new File(path).length();
-
-
-            OutputUri outputUri = new OutputUri(uri,path,width,height,size);
-            list.add(outputUri);
-        }
-        options = null;
-        setResultUris(list);
+//        for (int i = 0 ,len = clipData.getItemCount(); i <len; i++) {
+//            Uri uri = clipData.getItemAt(i).getUri();
+//            String path = BitmapUtil.getRealFilePath(this,uri);
+//            BitmapFactory.decodeFile(path, options);
+//            int width  = options.outWidth;
+//            int height = options.outHeight;
+//            long size  = new File(path).length();
+//
+//            ImageItem imageItem = new ImageItem(path,width,height,size);
+//            mSelectedImages.add(imageItem);
+//        }
+//        options = null;
+//        setResultUris(mSelectedImages);
     }
 
 
@@ -383,7 +380,7 @@ public class GalleryActivity extends PImagePickerBaseActivity {
      * 更新宽高比
      */
     public void updateAspectRadio(){
-        mGestureCropImageView.setTargetAspectRatio(configAspectRatio);
+        mGestureCropImageView.setTargetAspectRatio(pImagePickerConfig.getAspectRatio());
         mGestureCropImageView.setImageToWrapCropBounds();
 
     }
@@ -418,9 +415,9 @@ public class GalleryActivity extends PImagePickerBaseActivity {
                 lockProgressDialog.dismiss();
                 Log.i("裁切完成","裁切后uri："+resultUri);
                 String path = resultUri.getPath();
-                int size = (int)new File(path).length();
+                long size = new File(path).length();
                 Log.i("裁切完成","裁切后大小imageWidth："+imageWidth+",imageHeight:"+imageHeight+",size:"+size);
-                setResultUri(new OutputUri(resultUri,path,imageWidth,imageHeight,size));
+                setResultUri(new ImageItem(path,imageWidth,imageHeight,size));
             }
 
             @Override

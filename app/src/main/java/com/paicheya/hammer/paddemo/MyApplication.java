@@ -5,6 +5,7 @@ import android.app.Application;
 import com.elvishew.xlog.LogConfiguration;
 import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.XLog;
+import com.paicheya.pimagepicker.util.ImageLoaderUtils;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
@@ -27,7 +28,11 @@ public class MyApplication extends Application {
     }
 
     private void initApp(){
+        //初始化日志工具
         initAppLog();
+
+        //初始化ImageLoader
+        ImageLoaderUtils.initImageLoaderConfig(this);
     }
 
     private void initAppLog(){
@@ -41,6 +46,7 @@ public class MyApplication extends Application {
 //                .b()
 //                .build();
 //        XLog.init(config);
+
     }
 
 }

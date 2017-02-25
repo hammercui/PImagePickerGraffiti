@@ -27,6 +27,9 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile files('libs/photoView.jar')
+    //
     compile rootProject.ext.dependencies.appcompatv7
     //
     compile rootProject.ext.dependencies.junit

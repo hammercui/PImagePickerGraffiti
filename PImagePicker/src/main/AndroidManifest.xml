@@ -16,6 +16,14 @@
         <activity android:name=".view.gallery.GalleryActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".view.gallery.GalleryMultipleActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.PIP.FullSCreen"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".view.gallery.GalleryPreviewActivity"
+            android:theme="@style/AppTheme.PIP.FullSCreen"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>
