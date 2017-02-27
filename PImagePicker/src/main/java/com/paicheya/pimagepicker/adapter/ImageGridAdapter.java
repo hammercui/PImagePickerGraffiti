@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -162,12 +163,12 @@ public class ImageGridAdapter extends BaseAdapter {
         public View rootView;
         public ImageView ivThumb;
         public View mask;
-        public SuperCheckBox cbCheck;
+        public CheckBox cbCheck;
         public ViewHolder(View view) {
             rootView = view;
             ivThumb = (ImageView) view.findViewById(R.id.iv_thumb);
             mask = view.findViewById(R.id.mask);
-            cbCheck = (SuperCheckBox) view.findViewById(R.id.cb_check);
+            cbCheck = (CheckBox) view.findViewById(R.id.cb_check);
         }
     }
 

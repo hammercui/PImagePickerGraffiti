@@ -16,23 +16,26 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        initApp();
+
+    }
+
+    private void initApp(){
+        //初始化内存泄漏工具
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.
             return;
         }
         LeakCanary.install(this);
-
-        initApp();
-
-    }
-
-    private void initApp(){
         //初始化日志工具
         initAppLog();
 
         //初始化ImageLoader
         ImageLoaderUtils.initImageLoaderConfig(this);
+
+        //初始化崩溃日志
+        CrashManage.getIns().init( getApplicationInfo().loadLabel(getPackageManager()).toString());
     }
 
     private void initAppLog(){

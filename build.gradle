@@ -16,7 +16,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-
+        maven{
+            //url 'file:///Users/cly/Documents/Android/repo/'
+            url 'http://maven.devops.paicheya.com/nexus/content/repositories/thirdparty'
+        }
         //引用mygraffitipicture工程libs目录下的aar文件
 //        flatDir {
 //            dir project(':mygraffitipicture').file('libs')

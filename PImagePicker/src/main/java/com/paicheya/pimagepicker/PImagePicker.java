@@ -7,10 +7,9 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 
 import com.paicheya.pimagepicker.bean.ImageItem;
-import com.paicheya.pimagepicker.bean.OutputUri;
 import com.paicheya.pimagepicker.view.camera.CameraActivity;
 import com.paicheya.pimagepicker.core.PermissionUtil;
-import com.paicheya.pimagepicker.view.gallery.GalleryActivity;
+import com.paicheya.pimagepicker.view.gallery.GallerySingleActivity;
 import com.paicheya.pimagepicker.view.gallery.GalleryMultipleActivity;
 
 import java.io.File;
@@ -106,7 +105,7 @@ public class PImagePicker extends PermissionUtil {
             activity.startActivityForResult(intent,requestCode);
         }
         else{ //多选
-            Intent intent = new Intent(activity, GalleryActivity.class);
+            Intent intent = new Intent(activity, GallerySingleActivity.class);
             intent = processConfig(intent);
             activity.startActivityForResult(intent,requestCode);
         }

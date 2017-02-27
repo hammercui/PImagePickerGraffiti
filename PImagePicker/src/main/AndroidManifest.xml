@@ -13,7 +13,7 @@
         <activity android:name=".view.edit.EditActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name=".view.gallery.GalleryActivity"
+        <activity android:name=".view.gallery.GallerySingleActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name=".view.gallery.GalleryMultipleActivity"

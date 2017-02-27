@@ -31,11 +31,14 @@ dependencies {
     //
     testCompile rootProject.ext.dependencies.junit
     //
-   // compile project(':mygraffitipicture')
+    // compile project(':mygraffitipicture')
     //-------xlog日志管理库
     compile rootProject.ext.dependencies.xlog
     //内存泄漏工具
     debugCompile rootProject.ext.dependencies.leakcanary
-    //
     compile project(path: ':PImagePicker')
+    //compile 'com.hammer.anlib:PImagePicker:+@aar'
+    //flexbox
+    compile rootProject.ext.dependencies.flexbox
+
 }

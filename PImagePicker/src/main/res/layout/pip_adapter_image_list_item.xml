@@ -18,9 +18,11 @@
         android:background="#88000000"
         android:visibility="gone"/>
 
-    <com.paicheya.pimagepicker.view.gallery.SuperCheckBox
+    <CheckBox
         android:id="@+id/cb_check"
         style="@style/SuperCheckboxTheme"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|right"

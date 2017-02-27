@@ -9,6 +9,7 @@ import android.text.format.Formatter;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +38,7 @@ public class GalleryPreviewActivity extends BasePreviewActivity implements View.
     private View bottomBar;
     protected ViewPagerFixed mViewPager;
     protected ImagePageAdapter mAdapter;
-    private   SuperCheckBox mCbCheck;                //是否选中当前图片的CheckBox
+    private   CheckBox mCbCheck;                //是否选中当前图片的CheckBox
     private Button mBtnOk;                         //确认图片的选择
 
     @Override
@@ -96,7 +97,7 @@ public class GalleryPreviewActivity extends BasePreviewActivity implements View.
         //返回
         findViewById(R.id.btn_back).setOnClickListener(this);
         //选择
-        mCbCheck = (SuperCheckBox) findViewById(R.id.cb_check);
+        mCbCheck = (CheckBox) findViewById(R.id.cb_check);
         mCbCheck.setVisibility(singlePreview?View.GONE:View.VISIBLE);
         //初始化
         ImageItem item = mImageItems.get(mCurrentPosition);

@@ -1,1 +1,1 @@
-include ':app', ':AndroidsLib-release', ':PImagePicker',":ucrop"
+include ':app', ':AndroidsLib-release', ':PImagePicker'

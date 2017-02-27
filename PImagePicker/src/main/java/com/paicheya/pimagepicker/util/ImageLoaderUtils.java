@@ -1,6 +1,7 @@
 package com.paicheya.pimagepicker.util;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
@@ -17,12 +18,13 @@ import java.io.File;
 public class ImageLoaderUtils {
 
 
-    public static DisplayImageOptions imageLoaderOptions = new DisplayImageOptions.Builder()//
+    public static DisplayImageOptions imageDisplayOptions = new DisplayImageOptions.Builder()//
             .showImageOnLoading(R.drawable.pip_default_image)         //设置图片在下载期间显示的图片
             .showImageForEmptyUri(R.drawable.pip_default_image)       //设置图片Uri为空或是错误的时候显示的图片
             .showImageOnFail(R.drawable.pip_default_image)            //设置图片加载/解码过程中错误时候显示的图片
             .cacheInMemory(true)                                //设置下载的图片是否缓存在内存中
             .cacheOnDisk(true)                                  //设置下载的图片是否缓存在SD卡中
+            .bitmapConfig(Bitmap.Config.RGB_565) // ARGB_8888  RGB_565
             .build();
 
     /**

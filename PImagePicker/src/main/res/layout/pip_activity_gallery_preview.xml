@@ -59,7 +59,7 @@
             android:textColor="#ffffff"
             android:text="10/31"
             />
-        <com.paicheya.pimagepicker.view.gallery.SuperCheckBox
+        <CheckBox
             android:id="@+id/cb_check"
             style="@style/SuperCheckboxTheme"
             android:layout_width="wrap_content"
@@ -67,9 +67,9 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
-            android:drawablePadding="4dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
             android:includeFontPadding="true"
-            android:paddingLeft="8dp"
             android:textColor="#ffffff"/>
     </RelativeLayout>
 

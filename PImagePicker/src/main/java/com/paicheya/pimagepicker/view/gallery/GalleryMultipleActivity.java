@@ -162,7 +162,7 @@ public class GalleryMultipleActivity extends BaseMultipleActivity implements Ima
 
     /** 创建弹出的ListView */
     private void createPopupFolderList() {
-        if(mFolderPopupWindow == null){
+//        if(mFolderPopupWindow == null){
             mFolderPopupWindow = new FolderPopUpWindow(this, mImageFolderAdapter);
             mFolderPopupWindow.setOnItemClickListener(new FolderPopUpWindow.OnItemClickListener() {
                 @Override
@@ -178,8 +178,9 @@ public class GalleryMultipleActivity extends BaseMultipleActivity implements Ima
                     mGridView.smoothScrollToPosition(0);//滑动到顶部
                 }
             });
-        }
+//        }
         mFolderPopupWindow.setMargin(mFooterBar.getHeight());
+        //mFolderPopupWindow.setMargin(0);
     }
 
 

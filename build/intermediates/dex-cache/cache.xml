@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="24497dd7ccdf848dde14335011e715dcc1110275">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.yalantis-ucrop-2.2.0-native_6e156b2d768acfdbf7d98c9c881e329e8c8f281a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
@@ -241,17 +250,8 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="ed2bff1cc80fe6e8292ee06cca00c51107de6b76">
+        sha1="6c6f3a0fc03ae033cfc8990b246317643feebeeb">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b83a4a4521ac4ac4070a5253f31a91bc220ba71e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="91f6bcfe1a505a5b95ff5f06a4ddc4c0cadd7861">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -261,6 +261,15 @@
         revision="23.0.1"
         sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
         <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_317819eb4c64c2e5c8b5ec9fce4010cc1496d4d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b4ae3999b8893d3304b57bed52ee11c92fbf31ce">
+        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
     </item>
     <item
         is-multidex="true"
