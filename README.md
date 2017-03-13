@@ -1,9 +1,31 @@
+# PImagePicker
+从相机选择：
+![image](image/111.gif)
+从相册选择：
+![image](image/222.gif)
+选择器：
+![image](image/333.gif)
 
-> module-mygraffitipicture是android横屏pad平台，图片比例4：3， 已实现：从相机、相册获得图片，并裁切，涂鸦（纯色笔，马赛克笔)并保存
+# 目录
+* [Module:PImagePicker](#Module:PImagePicker)
+ 	* [感谢](#感谢)
+ 	* [relase note](#relase-note)
+ 	* [1.注意事项](#1注意事项)
+ 		* [1.三星机型旋转角度问题](#1三星机型旋转角度问题)
+ 		* [2.glide内存管理](#2glide内存管理)
+ 		* [3.android多图选择上传前压缩问题](#3.android多图选择上传前压缩问题)
+ 	* [2. 目标功能](#2目标功能)
+ 	* [3. 设计实现](#3设计实现)
+ 		* [PImagePickerConfig类](#pimagepickerconfig类)
+ 		* [PImagePicker类](#pimagepicker类)
+ 		* [BitemapUtil工具类](#bitemaputil工具类)
+ 		* [](#)
 
-> module-PImagePicker是android手机平台，图片比例支持4：3，16：9等，目标实现：可配置、从相机、相册获得图片，并裁切，涂鸦（马赛克笔，标记)并保存
+ 	* [引入的第三方库](#引入的第三方库)
+ 	* [工程目录](#工程目录)
+ 
 
-## Module:PImagePicker
+
 
 ## 感谢：
 本module的多图选择模块，大部分使用了[廖子尧](https://github.com/jeasonlzy)的[ImagePicker](https://github.com/jeasonlzy/ImagePicker)组件库，十分感谢！
@@ -11,7 +33,7 @@
 >图片选择、编辑库，包含自定义相机，照片处理
 
 
-### relase note:
+## relase note
 + 2017-02-19:
  - 完美解决里的自定义camera在竖屏应用，三星等部分手机拍照之后bitmap自动旋转的问题。
  - 发现内存溢出问题，是持有了外部的匿名内部类，也会持有匿名内部类的外部类。解决方式：不再使用单例模式+callback的回调方式，使用onResultActivity方式。
@@ -33,9 +55,15 @@
  - 完成多图选择，并测试内存占用，完美！暂时未发现内存泄漏问题，待更新
  - 考虑到activity的独占性，修改单例模式，使用继承模式，每个activity自己维护数据。
 
-### 1. 注意事项
-#### 1.三星机型旋转角度问题
++ 2017-03-02:
+ - 替换图片加载库univers image loader为gilde
+ - 发现uil的内存泄漏问题，glide的内存管理更优秀
+ - gradle增加了library打包功能，可以打包aar并提交到maven仓库，maven仓库可以是本地仓库，也可是网络私有仓库。
+ 
+## 1.注意事项
 
+
+### 1.三星机型旋转角度问题
 
 在三星部分机型，发现camera捕捉bitmap后，会对bitmap进行旋转处理，其他机型没有这个问题。
 
@@ -126,31 +154,50 @@ camer获得data转换成bitmap时，进行bitmap的旋转
 ```
 
 
+### 2.glide内存管理
+
+glide的内存管理区域于uil的地方在于，glide可以把图片内存生命周期限定在具体activity或者fragment，然后在onDestory时手动销毁
+
+```
+ Glide.get(context).clearMemory();
+``` 
+
+### 3.android多图选择上传前压缩问题(未完成）
+最近使用中发现，如果批量上传，图片过大的话，rn会超时，所以考虑在选择多个图片并回传给rn的时候，先批量压缩并存储，然后把压缩后的图片uri回传给rn。
+设计思路
+
+* 点击完成，弹出压缩进度图
+* asyncTask执行压缩存储进程
+* 缓存地址暂定为: 包地址/compressCache 
+* 可定制参数：压缩比例quality，阀值maxBytes,缓存最大个数60，超出定时清理(暂时按照先进先出FIFO)
 
 
 
-### 2. 目标功能
+## 2.目标功能
 * 图片获得
- - 相册，单选（支持裁切），多选（暂时不支持裁切）
- - 相机，单拍（支持裁切）
-* 图片裁切（可选），开发中
-* 图片涂鸦
+ - 相册，单选（支持按比例裁切，压缩），多选（暂时不支持裁切）
+ - 相机，单拍（支持按比例裁切，压缩）
+* 图片裁切（可选）
+* 图片涂鸦（未完成）
   - 马赛克（有回退，有清屏）
   - 图标，新建一个图标view,可旋转，可取消
+* 图片加载库提供两种：
+  - glide
+  - uiversual image loader
 
 
-### 3. 设计实现 
-#### PImagePickerConfig类
+## 3.设计实现 
+### PImagePickerConfig类
 >配置类，配置图片的各项属性，通过构建者模式实现
 如：
 
-1. `setPressQuality(int )`图片压缩比例 0~100
-2. `setAspectRatio(4,3)`图片宽高比，如4：3，16：9
-4. `setImageName(System.currentTimeMillis()+".jpg")`图片名称
-5. `setDirPath(String)`图片保存相对路径
-6. `setFromCamera(Boolean)`相机情况，相机一定要把获得的图片放到其他地址，而不是app包路径
+* `setPressQuality(int )`图片压缩比例 0~100
+* `setAspectRatio(4,3)`图片宽高比，如4：3，16：9
+* `setImageName(System.currentTimeMillis()+".jpg")`图片名称
+* `setDirPath(String)`图片保存相对路径,比如`"/padDemo"`
+* `setFromCamera(Boolean)`相机情况，相机一定要把获得的图片放到其他地址，而不是app包路径
 
-#### PImagePicker类
+### PImagePicker类
 >图片选择功能类，功能入口
 
 * `creat(PImagePickerConfig)`:初始化PImagePickerConfig属性
@@ -158,25 +205,24 @@ camer获得data转换成bitmap时，进行bitmap的旋转
 * `startGalleryActivity(Activity)`:从相册获得图片，目前单选模式
 
 
-#### BitemapUtil工具类
+### BitemapUtil工具类
 >提供操作Bitemap的工具，比如按比例裁切，旋转，byte转bitmap,uri获得realpath等，
 
 
 ## 引入的第三方库
 
-裁切库ucrop(以源码的形式引入，便于定制化修改),目前使用版本
-`compile 'com.yalantis:ucrop:2.2.0' `
+```
+ //google官方弹性布局
+    compile 'com.google.android:flexbox:0.2.5'
+    //crop
+    compile 'com.yalantis:ucrop:2.2.0-native'
+    //PhotoView
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+```
 
 
-##  工程目录
 
-+app 入口
 
-+mygraffitipicture->CropStartActivity.java 开始获得图片Avtivity
-
-+mygraffitipicture->GraffitiActivity.java  开始涂鸦
-
-+curop->UCropActivity.java  开始裁切
 
 
 

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.paicheya.pimagepicker.view.edit.EditActivity;
+import com.paicheya.pimagepicker.activity.edit.EditActivity;
 
 /**
  * 路由管理类

@@ -14,6 +14,7 @@
     <string name="select_limit">最多选择%1$d张图片</string>
     <string name="complete">完成</string>
     <string name="select_complete">完成(%1$d/%2$d)</string>
+    <string name="select_complete_nomax">完成(%1$d)</string>
     <string name="preview_count">预览(%1$d)</string>
     <string name="photo_crop">图片裁剪</string>
     <string name="origin">原图</string>

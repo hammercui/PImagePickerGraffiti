@@ -25,39 +25,33 @@ android {
 
 }
 
-//打包library的命令： ./gradlew -p PImagePicker(你的library的name) clean build uploadArchives -info
-
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile 'com.android.support:appcompat-v7:23.3.0'
     //junit
-    compile 'junit:junit:4.12'
     //log管理工C具
     compile 'com.orhanobut:logger:1.15'
     //google官方弹性布局
     compile 'com.google.android:flexbox:0.2.5'
     //crop
     compile 'com.yalantis:ucrop:2.2.0-native'
+    //PhotoView
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    //
+    compile project(':PAndroidUtils')
 }
+//打包library的命令： ./gradlew -p PImagePicker clean build uploadArchives -info
 
 uploadArchives {
     repositories {
         mavenDeployer {
             //本地maven
-            //repository(url: 'file:///Users/cly/Documents/Android/repo/')
-            //私有maven
-            repository(url:  'http://maven.devops.paicheya.com/nexus/content/repositories/thirdparty'){
-                authentication(userName: 'admin', password:'admin99')
-            }
-
+            repository(url: 'file:///Users/cly/Documents/Android/repo/')
             pom.project {
                 name 'PImagePicker'
                 groupId 'com.hammer.anlib'
                 artifactId 'PImagePicker'
-                version '1.0.2'
+                version '1.0.7'
                 packaging 'aar'
 
                 licenses {

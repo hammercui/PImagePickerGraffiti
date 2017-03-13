@@ -21,8 +21,8 @@
     <CheckBox
         android:id="@+id/cb_check"
         style="@style/SuperCheckboxTheme"
-        android:scaleX="0.7"
-        android:scaleY="0.7"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|right"

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="photoView">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/PImagePicker/libs/photoView.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

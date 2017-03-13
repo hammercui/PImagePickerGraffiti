@@ -10,6 +10,7 @@ ext {
 
     dependencies = [
             appcompatv7:'com.android.support:appcompat-v7:23.3.0',
+            recycleviewv7:"com.android.support:recyclerview-v7:23.3.0",
             junit:'junit:junit:4.12',
             xlog:'com.elvishew:xlog:1.3.0',
             logger:'com.orhanobut:logger:1.15',

@@ -10,11 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.hammer.anlib.pandroidutils.ScreenUtil;
 import com.paicheya.pimagepicker.R;
 import com.paicheya.pimagepicker.bean.ImageFolder;
-import com.paicheya.pimagepicker.util.ScreenUtils;
-import com.paicheya.pimagepicker.view.gallery.PImageLoader;
+import com.paicheya.pimagepicker.manager.PImageLoader;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,17 +25,17 @@ import java.util.List;
  */
 public class ImageFolderAdapter extends BaseAdapter {
 
-    private Activity mActivity;
+    private WeakReference<Activity> mActivity;
     private LayoutInflater mInflater;
     private int mImageSize;
     private List<ImageFolder> imageFolders;
     private int lastSelected = 0;
 
     public ImageFolderAdapter(Activity activity, List<ImageFolder> folders) {
-        mActivity = activity;
+        mActivity = new WeakReference<Activity>(activity);
         if (folders != null && folders.size() > 0) imageFolders = folders;
         else imageFolders = new ArrayList<>();
-        mImageSize = ScreenUtils.getImageItemWidth(mActivity);
+        mImageSize = ScreenUtil.getImageItemWidth(mActivity.get());
         mInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -71,8 +72,8 @@ public class ImageFolderAdapter extends BaseAdapter {
 
         ImageFolder folder = getItem(position);
         holder.folderName.setText(folder.name);
-        holder.imageCount.setText(mActivity.getString(R.string.pip_folder_image_count, folder.images.size()));
-        PImageLoader.displayImage(mActivity, folder.cover.path, holder.cover, mImageSize, mImageSize);
+        holder.imageCount.setText(mActivity.get().getString(R.string.pip_folder_image_count, folder.images.size()));
+        PImageLoader.displayImage(mActivity.get(), folder.cover.path, holder.cover, mImageSize, mImageSize);
 
         if (lastSelected == position) {
             holder.folderCheck.setVisibility(View.VISIBLE);

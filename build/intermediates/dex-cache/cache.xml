@@ -3,237 +3,111 @@
 
     <item
         is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_8739393ce3b740214118cd74b2ea2fc2c652a97e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5/3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f/leakcanary-analyzer-1.5.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.5_521551e3e250bc11f26bb3f0d2dbaf91c9209234/classes.dex" />
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.5_521551e3e250bc11f26bb3f0d2dbaf91c9209234/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_7572cdce8557e1f1b07eb403382abc0263d5dbf2/classes.dex" />
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_0c7df02a1815a9ffbf1e2eb866c32a69fe8d4b33/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/jars/classes.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="24497dd7ccdf848dde14335011e715dcc1110275">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.yalantis-ucrop-2.2.0-native_6e156b2d768acfdbf7d98c9c881e329e8c8f281a/classes.dex" />
+        sha1="052a45105839fd6055f1b28446dec86943344e22">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9826d34611de4ad409b292da5d3a644042aa57e6/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_0250dc61bea35c58bdddf6c228c57c67ed638de1/classes.dex" />
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_ff00ddd0569a79531b19d87ba5df02aabc936c21/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_8a1b915f09e1e1b560bab39a77f0c0ecd6c6640c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/hamcrest-core-1.3_9bcf890753a45b07dc2ad23cd30ed6378667610f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.elvishew/xlog/1.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d95412867890c4619c4402eda1670d6b7f7a71d3">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.elvishew-xlog-1.3.0_cf029b767592950deef5a6606402e53e4cd98db5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_e1547677cd781dd5abd3a4078b194b40976aef18/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_448bc28aa162c57d6ebd88be4593f0a77d0dbd15/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_edf96d6fde34d9cd5602f6fe14f5b924becfe9d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_f59113a2deb808110b35413fc7241fcd896ab36d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.orhanobut/logger/1.15/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2a156b99fc7cc034308f942906b09d32754a4470">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.orhanobut-logger-1.15_77349ad9885532112f7775941d711e8272db14ef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.5/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.squareup.leakcanary-leakcanary-android-1.5_dc077f3b9785a57a0d1b4507161a9f510ead432c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/androidPadDemo/PImagePicker/unspecified/jars/libs/universal-image-loader-1.9.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4e2ec9a1a288c4a652f0611e2c2c31ab0f9df8fb">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/universal-image-loader-1.9.5_d4ccf0ea714765dca978da26368684811a8aac80/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_9ea30bf7014df297fbc9eea8303a824f3f2a1c7c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_22d0932366edbb23e2998a3941d089412424f70c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/junit-4.12_ed018a82999af225a1447cabd23fb55e3397ef2d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_5226f6ad953f7470c394ea5067a76a663a104ad7/classes.dex" />
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_ff994e7a20cd009e06caa0f63dbf5da8d45dc7e2/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/androidPadDemo/PImagePicker/unspecified/jars/libs/photoView.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="160b1cfca255269f2329532085d620a037dde4fa">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/photoView_69313b2c003b2f410c9c32306d417d03d4df7713/classes.dex" />
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_3aeb0cfcfc06cfadf98979a3d86329194c6801dd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_c5e9a38376d0e1e0f4c3a83f6d41df3d9d35a77d/classes.dex" />
+        sha1="24497dd7ccdf848dde14335011e715dcc1110275">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.yalantis-ucrop-2.2.0-native_a363dcdfffa0088628ecea125b777fb449b3e825/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/2.0.3/640a438d2d415c056ca6a673ac26b183b044e160/haha-2.0.3.jar"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.5/442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375/universal-image-loader-1.9.5.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-2.0.3_a32dc15eef2039ade71167098eacd1939de73bab/classes.dex" />
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/universal-image-loader-1.9.5_79eaf393d1c88328afa0e06d21ee42004ef69858/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.google.android/flexbox/0.2.5/jars/classes.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="775715f20fc19479343592af2fa4d46c7d00fa5e">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android-flexbox-0.2.5_8795c8891052d5e35f4b5748c8e719d3d8d2225a/classes.dex" />
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_1c04be1df8d51726e081f07de656472ca1091b9e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.5/288101b16513158c2923ad3fb6161d1452b65e73/leakcanary-watcher-1.5.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.5_c38961de29e2ae86b86b180c79985afa73626042/classes.dex" />
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_92c0f2ec5f8bcb1bbaeb87e1d257d4343d249883/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_dfb0cdbe877c26a097c719822463e7bb389b5d67/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.9.0_20384fbabef47be15574f18030ef0c15db69a974/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.4.1_a9db2bdf6d415abdf05b5dd04058f5088648a0d6/classes.dex" />
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_28b888bca39f726448fa273b9989cdc75977cc7b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -242,43 +116,169 @@
         optimize="true"
         revision="23.0.1"
         sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_2de76ab5e5ef62f9b87bb0f44cd02a6f8af248f6/classes.dex" />
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_2de76ab5e5ef62f9b87bb0f44cd02a6f8af248f6/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="6c6f3a0fc03ae033cfc8990b246317643feebeeb">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b83a4a4521ac4ac4070a5253f31a91bc220ba71e/classes.dex" />
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_b93e35f2472b821682588ad00f9bd22a0638cec2/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_317819eb4c64c2e5c8b5ec9fce4010cc1496d4d6/classes.dex" />
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_6e1d530b95d847fd1ca3722c84a48c18640d72e8/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="b4ae3999b8893d3304b57bed52ee11c92fbf31ce">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_928522f12af7e89f7dcb4d7da2d219b3739f3c2c/classes.dex" />
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_020490d7b2e74b222bfb45af8a917fba0485f86e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/Users/cly/Desktop/androidDemo/androidPadDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_a85b7b272e4d73fb1e1bdb0a300cf704da5c2c55/classes.dex" />
+        sha1="16f3efa839a5d8bc6983b58ccd500594ba471372">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b9a1e200c51ce33e18172f7a92e11e4ad25a4cac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.google.android/flexbox/0.2.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="775715f20fc19479343592af2fa4d46c7d00fa5e">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android-flexbox-0.2.5_f049de7e867f8b170cf1b56d7ae6afffcb052b94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_81b0737fcefe74b9f44f8e3e3742f52ea203b973/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.squareup.leakcanary-leakcanary-android-1.5_a409ebc32e50ea8785ec99347d8ab057ce751530/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.orhanobut/logger/1.15/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2a156b99fc7cc034308f942906b09d32754a4470">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.orhanobut-logger-1.15_cce84c998f993900d77dcdd9d4f407052011391f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/2.0.3/640a438d2d415c056ca6a673ac26b183b044e160/haha-2.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-2.0.3_a32dc15eef2039ade71167098eacd1939de73bab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_387894a9b938639ea2f6b6a3beaeacad19c588bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.5/288101b16513158c2923ad3fb6161d1452b65e73/leakcanary-watcher-1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.5_c38961de29e2ae86b86b180c79985afa73626042/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.github.chrisbanes.photoview/library/1.2.4/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="98b5309c8d368a7c83ca5f90e0c905044c195edd">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.chrisbanes.photoview-library-1.2.4_d398912afb12a9a3e2fd159c2befacc23ef1b0f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_dfda2b42d7f9ed52def554453caedd909d064cbb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.elvishew/xlog/1.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d95412867890c4619c4402eda1670d6b7f7a71d3">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.elvishew-xlog-1.3.0_0771303de8153ac361ed2955b2a41231a4b27489/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.9.0_20384fbabef47be15574f18030ef0c15db69a974/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.4.1_a9db2bdf6d415abdf05b5dd04058f5088648a0d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_814995af01de0ee112b9780fe454d149cd5cc4c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/cly/Desktop/androidDemo/PImagePickerDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_de8c2ac8f44dc4bdf631ecb7827fbcb10ab130e2/classes.dex" />
     </item>
 
 </items>

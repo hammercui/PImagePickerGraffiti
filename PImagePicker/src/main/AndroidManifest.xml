@@ -7,20 +7,20 @@
         android:supportsRtl="true"
         >
 
-        <activity android:name=".view.camera.CameraActivity"
+        <activity android:name=".activity.camera.CameraActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name=".view.edit.EditActivity"
+        <activity android:name=".activity.edit.EditActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name=".view.gallery.GallerySingleActivity"
+        <activity android:name=".activity.gallery.GallerySingleActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name=".view.gallery.GalleryMultipleActivity"
+        <activity android:name=".activity.gallery.GalleryMultipleActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name=".view.gallery.GalleryPreviewActivity"
+        <activity android:name=".activity.gallery.GalleryPreviewActivity"
             android:theme="@style/AppTheme.PIP.FullSCreen"
             android:launchMode="singleTask"
             android:configChanges="keyboardHidden|orientation|screenSize"/>

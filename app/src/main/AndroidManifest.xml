@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.paicheya.hammer.paddemo">
+    package="com.paicheya.hammer.demo">
 
 
     <!-- 从sdcard中读取权限 -->
@@ -21,13 +21,13 @@
 
     
     <application
-        android:name=".MyApplication"
+        android:name="com.paicheya.hammer.demo.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name="com.paicheya.hammer.demo.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,7 @@
     >
 
 
-    <com.paicheya.pimagepicker.view.gallery.ViewPagerFixed
+    <com.paicheya.pimagepicker.activity.gallery.ViewPagerFixed
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,12 +15,39 @@
         android:layout_alignParentStart="true" />
 
     <!-- top bar-->
+
+    <!-- bottom bar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pip_top_bar_height"
+        android:id="@+id/bottom_bar"
+        android:background="#cc22292c"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/selector_top_ok"
+            android:minHeight="30dp"
+            android:minWidth="50dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="完成(3/9)"
+            android:textColor="#ffffff"
+            android:textSize="14dp"/>
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:background="#cc22292c"
         android:layout_height="@dimen/pip_top_bar_height"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <ImageView
             android:id="@+id/btn_back"
             android:layout_width="48dp"
@@ -67,34 +94,10 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
             android:includeFontPadding="true"
             android:textColor="#ffffff"/>
-    </RelativeLayout>
-
-    <!-- bottom bar-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/pip_top_bar_height"
-        android:id="@+id/bottom_bar"
-        android:background="#cc22292c"
-        android:layout_alignParentBottom="true">
-        <Button
-            android:id="@+id/btn_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/selector_top_ok"
-            android:minHeight="30dp"
-            android:minWidth="50dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:text="完成(3/9)"
-            android:textColor="#ffffff"
-            android:textSize="14dp"/>
     </RelativeLayout>
 
 </RelativeLayout>

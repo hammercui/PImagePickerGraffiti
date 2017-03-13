@@ -26,19 +26,26 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    //
+    //appcompatv7
     compile rootProject.ext.dependencies.appcompatv7
+    //recycleviewv7
+    compile rootProject.ext.dependencies.recycleviewv7
     //
     testCompile rootProject.ext.dependencies.junit
-    //
-    // compile project(':mygraffitipicture')
     //-------xlog日志管理库
     compile rootProject.ext.dependencies.xlog
     //内存泄漏工具
     debugCompile rootProject.ext.dependencies.leakcanary
-    compile project(path: ':PImagePicker')
-    //compile 'com.hammer.anlib:PImagePicker:+@aar'
-    //flexbox
+    //flebbox
     compile rootProject.ext.dependencies.flexbox
+    //自定义工具类
+    compile project(':PAndroidUtils')
+    //自定义图片选择器
+    compile project(':PImagePicker')
+    //图片库:glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //图片库：uil
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
 
 }

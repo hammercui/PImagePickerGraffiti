@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.hammer.anlib.pandroidutils.ScreenUtil;
 import com.paicheya.pimagepicker.bean.ImageItem;
-import com.paicheya.pimagepicker.util.ScreenUtils;
-import com.paicheya.pimagepicker.view.gallery.PImageLoader;
+import com.paicheya.pimagepicker.manager.PImageLoader;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 import uk.co.senab.photoview.PhotoView;
@@ -25,14 +26,15 @@ public class ImagePageAdapter extends PagerAdapter {
     private int screenWidth;
     private int screenHeight;
     private ArrayList<ImageItem> images = new ArrayList<>();
-    private Activity mActivity;
-    public PhotoViewClickListener listener;
+    private WeakReference<Activity> mActivity;
+    public  PhotoViewClickListener listener;
+    //private List<PhotoView> caches = new ArrayList<>();
 
     public ImagePageAdapter(Activity activity, ArrayList<ImageItem> images) {
-        this.mActivity = activity;
+        this.mActivity = new WeakReference<Activity>(activity) ;
         this.images = images;
 
-        DisplayMetrics dm = ScreenUtils.getScreenPix(activity);
+        DisplayMetrics dm = ScreenUtil.getScreenWH(activity);
         screenWidth = dm.widthPixels;
         screenHeight = dm.heightPixels;
         //imagePicker = ImagePicker.getInstance();
@@ -48,15 +50,16 @@ public class ImagePageAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        PhotoView photoView = new PhotoView(mActivity);
+        PhotoView photoView = new PhotoView(mActivity.get());
         ImageItem imageItem = images.get(position);
-        PImageLoader.displayImage(mActivity, imageItem.path, photoView, screenWidth, screenHeight);
+        PImageLoader.displayImage(mActivity.get(), imageItem.path, photoView, screenWidth, screenHeight);
         photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
             @Override
             public void onPhotoTap(View view, float x, float y) {
                 if (listener != null) listener.OnPhotoTapListener(view, x, y);
             }
         });
+
         container.addView(photoView);
         return photoView;
     }
@@ -74,6 +77,10 @@ public class ImagePageAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
+        PhotoView photoview = (PhotoView)object;
+        if(photoview.getVisibleRectangleBitmap() != null){
+            photoview.getVisibleRectangleBitmap().recycle();
+        }
     }
 
     @Override

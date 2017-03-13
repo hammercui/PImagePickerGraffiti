@@ -1,34 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <Button
-        android:id="@+id/btn_test_camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试照相机"/>
+    >
 
-    <Button
-        android:id="@+id/btn_test_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试相册"/>
-
-    <ImageView
-        android:id="@+id/image_test"
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        />
-    <com.paicheya.hammer.paddemo.ExpandGridView
-        android:id="@+id/gridview_demo"
+    <LinearLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000"
-        android:horizontalSpacing="4dp"
-        android:numColumns="3"
-        android:verticalSpacing="4dp"/>
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_test_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试照相机"/>
+
+            <Button
+                android:id="@+id/btn_test_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试相册"/>
+            <Button
+                android:id="@+id/btn_test_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试选择"/>
+        </LinearLayout>
+
+
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0d7360"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_uil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="UIL"/>
+
+            <RadioButton
+                android:id="@+id/rb_glide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Glide"/>
+
+        </RadioGroup>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:background="@color/colorAccent"
+            android:id="@+id/recycleview_demo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 </LinearLayout>
+

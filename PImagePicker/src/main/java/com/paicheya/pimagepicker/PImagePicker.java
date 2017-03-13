@@ -1,16 +1,19 @@
 package com.paicheya.pimagepicker;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import com.paicheya.pimagepicker.bean.ImageItem;
-import com.paicheya.pimagepicker.view.camera.CameraActivity;
-import com.paicheya.pimagepicker.core.PermissionUtil;
-import com.paicheya.pimagepicker.view.gallery.GallerySingleActivity;
-import com.paicheya.pimagepicker.view.gallery.GalleryMultipleActivity;
+import com.paicheya.pimagepicker.activity.camera.CameraActivity;
+import com.paicheya.pimagepicker.base.PermissionUtil;
+import com.paicheya.pimagepicker.activity.gallery.GallerySingleActivity;
+import com.paicheya.pimagepicker.activity.gallery.GalleryMultipleActivity;
+import com.paicheya.pimagepicker.widget.BottomSelectDialog;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -28,9 +31,9 @@ public class PImagePicker extends PermissionUtil {
     public static final int RESULT_CODE_BACK = 200001;
     public static final int RESULT_CODE_ITEMS   = 200002;
 
-    private   static final String EXTRA_PREFIX = "com.hammer.pimagepicker";
-    public  static final  String EXTRA_PIMAGE_PICKER_CONFIG = EXTRA_PREFIX +"config"; //配置属性
-    public  static final  String EXTRA_SELECT_IMAGES = EXTRA_PREFIX +"select_images"; //传递已选的item
+    private static final String EXTRA_PREFIX = "com.hammer.pimagepicker";
+    public static final  String EXTRA_PIMAGE_PICKER_CONFIG = EXTRA_PREFIX +"config"; //配置属性
+    public static final  String EXTRA_SELECT_IMAGES = EXTRA_PREFIX +"select_images"; //传递已选的item
     public static final   String EXTRA_SELECTED_IMAGE_POSITION = "selected_image_position";
     public static final   String EXTRA_IMAGE_ITEMS = "extra_image_items";
     public static final   String EXTRA_PREVIEW_MODE_SINGLE = "extra_preview_mode_single";//仅预览模式
@@ -57,7 +60,7 @@ public class PImagePicker extends PermissionUtil {
      * 获得配置信息
      * @return
      */
-    public PImagePickerConfig getConfig() {
+    public  PImagePickerConfig getConfig() {
         return config;
     }
 
@@ -76,6 +79,39 @@ public class PImagePicker extends PermissionUtil {
         return new PImagePicker(config);
     }
 
+
+    /**
+     * 弹出选项器
+     * @param appCompatActivity
+     */
+    public static void showSelectDialog(final AppCompatActivity appCompatActivity){
+        BottomSelectDialog bottomSelectDialog = new BottomSelectDialog();
+        bottomSelectDialog.show(appCompatActivity.getFragmentManager(),"bottomSelectDialog");
+        bottomSelectDialog.setSelectFromListener(new BottomSelectDialog.SelectFromListener() {
+            @Override
+            public void fromCamera() {
+                PImagePickerConfig pImagePickerConfig = new PImagePickerConfig.Builder(appCompatActivity)
+                        .setImageName(System.currentTimeMillis()+".jpg")
+                        .setPressQuality(100)
+                        .setFromCamera(true)
+                        .setAspectRatio(4,3)
+                        .setCameraRoll(true)
+                        .setMultiple(true)
+                        .builder();
+                PImagePicker.create(pImagePickerConfig).startCameraActivity(appCompatActivity);
+            }
+
+            @Override
+            public void fromGallery() {
+                PImagePickerConfig pImagePickerConfig2 = new PImagePickerConfig.Builder(appCompatActivity)
+                        .setImageName(System.currentTimeMillis()+".jpg")
+                        .setPressQuality(100)
+                        .setMultiple(true)
+                        .builder();
+                PImagePicker.create(pImagePickerConfig2).startGalleryActivity(appCompatActivity);
+            }
+        });
+    }
 
     /**
      * 从相机中获得图片
